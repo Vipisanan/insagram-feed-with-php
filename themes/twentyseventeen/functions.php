@@ -665,29 +665,29 @@ require get_parent_theme_file_path( '/inc/customizer.php' );
 require get_parent_theme_file_path( '/inc/icon-functions.php' );
 
 
-
-// instagram 
-require get_parent_theme_file_path( '/get-instagram-feed.php' );
-
-// implement for custom membership
-require get_parent_theme_file_path( '../../mu-plugin/mustuse.php' );
-
-// implement for custom login
-// require get_parent_theme_file_path( '/custom-login.php' );
-function redirect_to_custom_login(){
-		wp_redirect(site_url(). "/login");
-		exit;
-}
-add_action("wp_logout" ,"redirect_to_custom_login");
-
-add_action("init" ,"fn_redirect_wp_admin");
-function fn_redirect_wp_admin(){
-	global $pagenow;
-	if($pagenow == "wp-login.php"){
-		wp_redirect(site_url()."/login");
-		exit;
-	}
-
-}
+//
+//// instagram
+//require get_parent_theme_file_path( '/get-instagram-feed.php' );
+//
+//// implement for custom membership
+//require get_parent_theme_file_path( '../../mu-plugin/mustuse.php' );
+//
+//// implement for custom login
+//// require get_parent_theme_file_path( '/custom-login.php' );
+//function redirect_to_custom_login(){
+//		wp_redirect(site_url(). "/login");
+//		exit;
+//}
+//add_action("wp_logout" ,"redirect_to_custom_login");
+//
+//add_action("init" ,"fn_redirect_wp_admin");
+//function fn_redirect_wp_admin(){
+//	global $pagenow;
+//	if($pagenow == "wp-login.php"){
+//		wp_redirect(site_url()."/login");
+//		exit;
+//	}
+//
+//}
 
 

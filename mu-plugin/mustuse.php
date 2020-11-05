@@ -18,5 +18,5 @@
     add_action("init" , "control");
 
     function remove_menu_pages(){
-            remove_menu_page("upload.php");
+//            remove_menu_page("upload.php");
     }
