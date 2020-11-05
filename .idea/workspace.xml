@@ -20,196 +20,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="723e5bf0-580b-49cc-b5a7-d321feeb1216" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/plugins/custom-api/custom-api.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/themes/twentyseventeen-child/functions.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/themes/twentyseventeen-child/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/themes/twenty-child/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mu-plugin/mustuse.php" beforeDir="false" afterPath="$PROJECT_DIR$/mu-plugin/mustuse.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/instagram-feed/README.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/instagram-feed/css/admin-notifications.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/instagram-feed/css/sb-blocks.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/instagram-feed/css/sb-instagram-2-1.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/instagram-feed/css/sb-instagram-2-1.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/instagram-feed/css/sb-instagram-2-2.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/instagram-feed/css/sb-instagram-2-2.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/instagram-feed/css/sb-instagram-admin.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/instagram-feed/css/sb-instagram.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/instagram-feed/css/sb-instagram.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/instagram-feed/css/sbi-styles.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/instagram-feed/css/sbi-styles.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/instagram-feed/gpl-2.0.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/instagram-feed/img/about/api-error.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/instagram-feed/img/about/icon-full.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/instagram-feed/img/about/icon-none.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/instagram-feed/img/about/icon-partial.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/instagram-feed/img/about/plugin-fb.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/instagram-feed/img/about/plugin-if.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/instagram-feed/img/about/plugin-mi.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/instagram-feed/img/about/plugin-om.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/instagram-feed/img/about/plugin-rp.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/instagram-feed/img/about/plugin-seo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/instagram-feed/img/about/plugin-smtp.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/instagram-feed/img/about/plugin-tw.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/instagram-feed/img/about/plugin-wpforms.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/instagram-feed/img/about/plugin-yt.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/instagram-feed/img/about/steps.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/instagram-feed/img/about/team.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/instagram-feed/img/balloon-120.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/instagram-feed/img/carousel.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/instagram-feed/img/grid.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/instagram-feed/img/highlight.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/instagram-feed/img/insta-logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/instagram-feed/img/instagram-pro-promo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/instagram-feed/img/loader.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/instagram-feed/img/masonry.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/instagram-feed/img/placeholder.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/instagram-feed/img/sbi-icon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/instagram-feed/img/sbi-oembed.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/instagram-feed/img/small-logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/instagram-feed/img/sw-screenshot.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/instagram-feed/inc/admin/PluginSilentUpgrader.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/instagram-feed/inc/admin/PluginSilentUpgraderSkin.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/instagram-feed/inc/admin/actions.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/instagram-feed/inc/admin/addon-functions.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/instagram-feed/inc/admin/blocks/class-sbi-blocks.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/instagram-feed/inc/admin/class-install-skin.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/instagram-feed/inc/admin/class-sbi-about.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/instagram-feed/inc/admin/class-sbi-new-user.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/instagram-feed/inc/admin/class-sbi-notifications.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/instagram-feed/inc/admin/class-sbi-sitehealth.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/instagram-feed/inc/admin/class-sbi-tracking.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/instagram-feed/inc/admin/main.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/instagram-feed/inc/class-sb-instagram-api-connect.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/instagram-feed/inc/class-sb-instagram-cron-updater.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/instagram-feed/inc/class-sb-instagram-display-elements.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/instagram-feed/inc/class-sb-instagram-education.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/instagram-feed/inc/class-sb-instagram-feed.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/instagram-feed/inc/class-sb-instagram-oembed.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/instagram-feed/inc/class-sb-instagram-parse.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/instagram-feed/inc/class-sb-instagram-post-set.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/instagram-feed/inc/class-sb-instagram-post.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/instagram-feed/inc/class-sb-instagram-posts-manager.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/instagram-feed/inc/class-sb-instagram-settings.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/instagram-feed/inc/class-sb-instagram-token-refresher.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/instagram-feed/inc/email.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/instagram-feed/inc/if-functions.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/instagram-feed/instagram-feed.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/instagram-feed/js/admin-notifications.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/instagram-feed/js/jquery.matchHeight-min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/instagram-feed/js/sb-blocks.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/instagram-feed/js/sb-instagram-2-1.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/instagram-feed/js/sb-instagram-2-1.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/instagram-feed/js/sb-instagram-2-2.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/instagram-feed/js/sb-instagram-2-2.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/instagram-feed/js/sb-instagram-admin-2-2.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/instagram-feed/js/sb-instagram-admin.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/instagram-feed/js/sb-instagram.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/instagram-feed/js/sb-instagram.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/instagram-feed/js/sbi-scripts.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/instagram-feed/js/sbi-scripts.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/instagram-feed/languages/instagram-feed-da_DK.mo" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/instagram-feed/languages/instagram-feed-de_DE.mo" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/instagram-feed/languages/instagram-feed-en.mo" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/instagram-feed/languages/instagram-feed-es_ES.mo" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/instagram-feed/languages/instagram-feed-fi_FI.mo" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/instagram-feed/languages/instagram-feed-fr_FR.mo" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/instagram-feed/languages/instagram-feed-it_IT.mo" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/instagram-feed/languages/instagram-feed-ja_JP.mo" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/instagram-feed/languages/instagram-feed-ko_KR.mo" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/instagram-feed/languages/instagram-feed-nl_NL.mo" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/instagram-feed/languages/instagram-feed-nn_NO.mo" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/instagram-feed/languages/instagram-feed-pt_PT.mo" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/instagram-feed/languages/instagram-feed-ru_RU.mo" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/instagram-feed/languages/instagram-feed-sv_SE.mo" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/instagram-feed/languages/instagram-feed.pot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/instagram-feed/templates/feed.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/instagram-feed/templates/footer.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/instagram-feed/templates/header.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/instagram-feed/templates/item.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/instagram-feed/widget.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/instagram-feed/wpml-config.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/twentyseventeen/functions.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/twentyseventeen/functions.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/sb-instagram-feed-images/101036999_111845617033425_6033186933950649581_nfull.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/sb-instagram-feed-images/101036999_111845617033425_6033186933950649581_nlow.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/sb-instagram-feed-images/101406831_907022329766696_8823976103917655268_nfull.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/sb-instagram-feed-images/101406831_907022329766696_8823976103917655268_nlow.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/sb-instagram-feed-images/102972147_111352910452590_8542333935560461879_nfull.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/sb-instagram-feed-images/102972147_111352910452590_8542333935560461879_nlow.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/sb-instagram-feed-images/103368457_303125147367661_6910868786815279464_nfull.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/sb-instagram-feed-images/103368457_303125147367661_6910868786815279464_nlow.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/sb-instagram-feed-images/103856660_198909521332526_2183740356779508165_nfull.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/sb-instagram-feed-images/103856660_198909521332526_2183740356779508165_nlow.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/sb-instagram-feed-images/104839484_271700293945022_5104143695861066011_nfull.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/sb-instagram-feed-images/104839484_271700293945022_5104143695861066011_nlow.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/sb-instagram-feed-images/104868004_142535430777784_3712195218602844830_nfull.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/sb-instagram-feed-images/104868004_142535430777784_3712195218602844830_nlow.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/sb-instagram-feed-images/115908390_285331182796586_7259658614084946449_nfull.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/sb-instagram-feed-images/115908390_285331182796586_7259658614084946449_nlow.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/sb-instagram-feed-images/116127637_319200105876010_7980493908937843533_nfull.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/sb-instagram-feed-images/116127637_319200105876010_7980493908937843533_nlow.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/sb-instagram-feed-images/116365778_1450563088461060_9169111430418307612_nfull.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/sb-instagram-feed-images/116365778_1450563088461060_9169111430418307612_nlow.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/sb-instagram-feed-images/116489158_752060175628044_2503483788421067594_nfull.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/sb-instagram-feed-images/116489158_752060175628044_2503483788421067594_nlow.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/sb-instagram-feed-images/117199097_301008627884232_7558743430033485634_nfull.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/sb-instagram-feed-images/117199097_301008627884232_7558743430033485634_nlow.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/sb-instagram-feed-images/119162994_346572240055007_2086428843243807675_nfull.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/sb-instagram-feed-images/119162994_346572240055007_2086428843243807675_nlow.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/sb-instagram-feed-images/119239843_339447803774170_6098155931593431242_nfull.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/sb-instagram-feed-images/119239843_339447803774170_6098155931593431242_nlow.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/sb-instagram-feed-images/120034170_199058628238132_7467764937335000417_nfull.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/sb-instagram-feed-images/120034170_199058628238132_7467764937335000417_nlow.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/sb-instagram-feed-images/121254217_3128650987264615_5318449782286139134_nfull.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/sb-instagram-feed-images/121254217_3128650987264615_5318449782286139134_nlow.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/sb-instagram-feed-images/40602662_312227699568059_7617866455781019007_nfull.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/sb-instagram-feed-images/40602662_312227699568059_7617866455781019007_nlow.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/sb-instagram-feed-images/43109862_312662619519699_1194736263416232110_nfull.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/sb-instagram-feed-images/43109862_312662619519699_1194736263416232110_nlow.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/sb-instagram-feed-images/43817521_243957443144792_5103659485854241388_nfull.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/sb-instagram-feed-images/43817521_243957443144792_5103659485854241388_nlow.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/sb-instagram-feed-images/43913066_196819181126958_2436155313101413818_nfull.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/sb-instagram-feed-images/43913066_196819181126958_2436155313101413818_nlow.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/sb-instagram-feed-images/44306731_570697736717607_6511762231651567631_nfull.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/sb-instagram-feed-images/44306731_570697736717607_6511762231651567631_nlow.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/sb-instagram-feed-images/45326920_211636166400777_6439198053176663852_nfull.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/sb-instagram-feed-images/45326920_211636166400777_6439198053176663852_nlow.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/sb-instagram-feed-images/46185223_280811025952631_8973676746808167858_nfull.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/sb-instagram-feed-images/46185223_280811025952631_8973676746808167858_nlow.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/sb-instagram-feed-images/52348592_845156255835228_3514876876522587065_nfull.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/sb-instagram-feed-images/52348592_845156255835228_3514876876522587065_nlow.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/sb-instagram-feed-images/54247273_119612175873332_1084755943494606045_nfull.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/sb-instagram-feed-images/54247273_119612175873332_1084755943494606045_nlow.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/sb-instagram-feed-images/65474381_1201084246738534_3334682442715405280_nfull.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/sb-instagram-feed-images/65474381_1201084246738534_3334682442715405280_nlow.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/sb-instagram-feed-images/66091737_140726810462603_4645227692198798679_nfull.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/sb-instagram-feed-images/66091737_140726810462603_4645227692198798679_nlow.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/sb-instagram-feed-images/66381808_2451163655129218_3745548872176628253_nfull.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/sb-instagram-feed-images/66381808_2451163655129218_3745548872176628253_nlow.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/sb-instagram-feed-images/66664738_394788784490488_3886805006828329073_nfull.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/sb-instagram-feed-images/66664738_394788784490488_3886805006828329073_nlow.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/sb-instagram-feed-images/67199418_980745115590634_4732690708837813260_nfull.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/sb-instagram-feed-images/67199418_980745115590634_4732690708837813260_nlow.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/sb-instagram-feed-images/69695266_1207054419496038_6338271562146421220_nfull.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/sb-instagram-feed-images/69695266_1207054419496038_6338271562146421220_nlow.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/sb-instagram-feed-images/73475317_2531161723587176_3112623937391075315_nfull.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/sb-instagram-feed-images/73475317_2531161723587176_3112623937391075315_nlow.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/sb-instagram-feed-images/75225511_462665197959869_1500830160121836112_nfull.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/sb-instagram-feed-images/75225511_462665197959869_1500830160121836112_nlow.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/sb-instagram-feed-images/76818023_104145867697037_7787620875315736374_nfull.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/sb-instagram-feed-images/76818023_104145867697037_7787620875315736374_nlow.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/sb-instagram-feed-images/79225955_2785734184810938_6389999951947265935_nfull.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/sb-instagram-feed-images/79225955_2785734184810938_6389999951947265935_nlow.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/sb-instagram-feed-images/84019140_206828323799016_4556489443817476327_nfull.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/sb-instagram-feed-images/84019140_206828323799016_4556489443817476327_nlow.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/sb-instagram-feed-images/84637781_2759024014184283_4199865803637204055_nfull.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/sb-instagram-feed-images/84637781_2759024014184283_4199865803637204055_nlow.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/sb-instagram-feed-images/90094193_529638047694168_1950067192127243988_nfull.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/sb-instagram-feed-images/90094193_529638047694168_1950067192127243988_nlow.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/sb-instagram-feed-images/93754960_703518543521499_1503843976604623373_nfull.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/sb-instagram-feed-images/93754960_703518543521499_1503843976604623373_nlow.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/sb-instagram-feed-images/95615986_232840148143447_5174576834013293522_nfull.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/sb-instagram-feed-images/95615986_232840148143447_5174576834013293522_nlow.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/twentyseventeen-child/functions.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/twentyseventeen-child/functions.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/twentyseventeen-child/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/themes/twentyseventeen-child/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -218,6 +32,13 @@
   </component>
   <component name="ComposerSettings">
     <execution />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -232,10 +53,12 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/themes" />
       <recent name="$PROJECT_DIR$/plugins/custom-api" />
     </key>
   </component>
@@ -264,7 +87,7 @@
       <updated>1604489505913</updated>
       <workItem from="1604489506989" duration="49000" />
       <workItem from="1604489635954" duration="21020000" />
-      <workItem from="1604566757830" duration="11002000" />
+      <workItem from="1604566757830" duration="13281000" />
     </task>
     <servers />
   </component>
@@ -287,18 +110,18 @@
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="713" y="354" width="551" height="396" key="#com.intellij.fileTypes.FileTypeChooser/67.27.1853.1053@67.27.1853.1053" timestamp="1604571252376" />
-    <state x="167" y="125" width="1653" height="855" key="DiffContextDialog" timestamp="1604590611662">
+    <state x="167" y="125" width="1653" height="855" key="DiffContextDialog" timestamp="1604591738169">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="167" y="125" width="1653" height="855" key="DiffContextDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1604590611662" />
+    <state x="167" y="125" width="1653" height="855" key="DiffContextDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1604591738169" />
     <state x="704" y="272" width="721" height="561" key="NewPhpClassDialog" timestamp="1604587551646">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="704" y="272" width="721" height="561" key="NewPhpClassDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1604587551646" />
-    <state x="789" y="478" width="399" height="149" key="NewPhpFileDialog" timestamp="1604575017125">
+    <state x="789" y="478" width="399" height="149" key="NewPhpFileDialog" timestamp="1604592044912">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="789" y="478" width="399" height="149" key="NewPhpFileDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1604575017125" />
+    <state x="789" y="478" width="399" height="149" key="NewPhpFileDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1604592044912" />
     <state x="656" y="257" width="672" height="678" key="search.everywhere.popup" timestamp="1604544400247">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
