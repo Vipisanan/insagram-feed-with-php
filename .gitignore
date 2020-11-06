@@ -5,6 +5,7 @@
 /vendor
 /upload
 /themes/twentyseventeen/page
+/themes/twentyseventeen-child/Utill.php
 .env
 .env.backup
 .phpunit.result.cache

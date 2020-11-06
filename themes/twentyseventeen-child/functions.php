@@ -1,4 +1,5 @@
 <?php
+
 // style
 function theme_enqueue_styles()
 {
@@ -79,6 +80,16 @@ class Custom_Posts_Controller extends WP_REST_Controller
             array(
                 'methods' => 'GET',
                 'callback' => array($this, 'get_all_schedule'),
+                'permission_callback' => array($this, 'get_items_permissions_check'),
+                'args' => array(
+
+                ),
+            )
+        ]);
+        register_rest_route($namespace, '/' . 'insta', [
+            array(
+                'methods' => 'GET',
+                'callback' => array($this, 'get_insta_feed'),
                 'permission_callback' => array($this, 'get_items_permissions_check'),
                 'args' => array(
 
@@ -220,6 +231,17 @@ class Custom_Posts_Controller extends WP_REST_Controller
         $response = new WP_REST_Response($all_schedule);
         $response->set_status(200);
         return $response;
+    }
+
+    function get_insta_feed(){
+        $fields = "id,caption,media_type,media_url,permalink,thumbnail_url,timestamp,username";
+        $limit = 30;
+        $json_feed_url = "https://graph.instagram.com/me/media?fields={$fields}&access_token={$token}&limit={$limit}";
+        $json_feed = @file_get_contents($json_feed_url);
+        $json_instagram_feeds =json_decode($json_feed, true, 512, JSON_BIGINT_AS_STRING);
+
+            return $json_instagram_feeds;
+
     }
 }
 //-------------------------------------------api----------------------------
