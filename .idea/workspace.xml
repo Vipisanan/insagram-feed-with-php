@@ -21,7 +21,7 @@
   <component name="ChangeListManager">
     <list default="true" id="723e5bf0-580b-49cc-b5a7-d321feeb1216" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/twentyseventeen-child/backupfile.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/twentyseventeen-child/backupfile.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugins/custom-table/std-time-schedule.php" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/custom-table/std-time-schedule.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/themes/twentyseventeen-child/functions.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/twentyseventeen-child/functions.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -86,7 +86,7 @@
       <updated>1604489505913</updated>
       <workItem from="1604489506989" duration="49000" />
       <workItem from="1604489635954" duration="21020000" />
-      <workItem from="1604566757830" duration="39968000" />
+      <workItem from="1604566757830" duration="50617000" />
     </task>
     <servers />
   </component>
