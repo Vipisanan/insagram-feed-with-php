@@ -27,6 +27,10 @@ add_action('rest_api_init', function () {
         'methods' => 'GET',
         'callback' => 'wl_post',
     ) );
+    register_rest_route( 'wl/v1','/add-user', array(
+        'methods' => 'POST',
+        'callback' => 'vi_add_user',
+    ) );
 });
 
 //get by post_td
@@ -66,7 +70,7 @@ function get_all_users_by_category($request) {
 
 function wl_post( $slug ) {
     $args = [
-        'name' => $slug['filter'],
+        'slug' => $slug['slug'],
         'post_type' => 'post'
     ];
 
@@ -84,3 +88,24 @@ function wl_post( $slug ) {
     return $data;
 }
 
+function vi_add_user() {
+
+//    $posts = get_posts($args);
+
+    $data = [];
+
+        $data['id'] = 'vipi';
+        $data['username'] = "vipi";
+        $data['email'] = "vipi@gmail.com";
+        $data['description'] = 'it a first post method';
+        $data['roles'] = 1;
+        $data['password'] = 'vipi875020';
+    $user_id = wp_create_user( 'vipi_subscriber', 'vipi875020', 'vipi@gmail.com');
+    if ( is_int($user_id) )
+    {
+        $wp_user_object = new WP_User($user_id);
+        $wp_user_object->set_role('subscriber');
+//        echo 'Successfully created new admin user. Now delete this file!';
+    }
+    return $user_id;
+}

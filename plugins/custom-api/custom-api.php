@@ -47,3 +47,5 @@ class Latest_Posts_Controller extends WP_REST_Controller {
         return new WP_REST_Response($posts, 200);
     }
 }
+
+//=======================================
