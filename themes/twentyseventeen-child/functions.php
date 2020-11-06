@@ -75,6 +75,16 @@ class Custom_Posts_Controller extends WP_REST_Controller
                 ),
             )
         ]);
+        register_rest_route($namespace, '/' . 'schedule', [
+            array(
+                'methods' => 'GET',
+                'callback' => array($this, 'get_all_schedule'),
+                'permission_callback' => array($this, 'get_items_permissions_check'),
+                'args' => array(
+
+                ),
+            )
+        ]);
 
 
     }
@@ -202,6 +212,14 @@ class Custom_Posts_Controller extends WP_REST_Controller
         ");
             return "successfully created schedule for " . $name . $std_user_id[0];
         }
+    }
+
+    function get_all_schedule(WP_REST_Request $request){
+        global $wpdb;
+        $all_schedule = $wpdb->get_results("SELECT * FROM wp_std_booking_schedule");
+        $response = new WP_REST_Response($all_schedule);
+        $response->set_status(200);
+        return $response;
     }
 }
 //-------------------------------------------api----------------------------
