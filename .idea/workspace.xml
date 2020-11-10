@@ -20,10 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="723e5bf0-580b-49cc-b5a7-d321feeb1216" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/twentyseventeen-child/controllers/ScheduleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/twentyseventeen-child/controllers/ScheduleController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/twentyseventeen-child/services/ScheduleService.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/twentyseventeen-child/services/ScheduleService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugins/custom-table/std-time-schedule.php" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/custom-table/std-time-schedule.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,7 +91,7 @@
       <workItem from="1604837946532" duration="420000" />
       <workItem from="1604841140413" duration="1116000" />
       <workItem from="1604853597885" duration="1734000" />
-      <workItem from="1604978975242" duration="7360000" />
+      <workItem from="1604978975242" duration="14199000" />
     </task>
     <servers />
   </component>
@@ -133,9 +131,9 @@
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="789" y="478" width="399" height="149" key="NewPhpFileDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1604984292334" />
-    <state x="656" y="257" width="672" height="678" key="search.everywhere.popup" timestamp="1604647958096">
+    <state x="656" y="257" width="672" height="678" key="search.everywhere.popup" timestamp="1604993436322">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="656" y="257" width="672" height="678" key="search.everywhere.popup/67.27.1853.1053@67.27.1853.1053" timestamp="1604647958096" />
+    <state x="656" y="257" width="672" height="678" key="search.everywhere.popup/67.27.1853.1053@67.27.1853.1053" timestamp="1604993436322" />
   </component>
 </project>
