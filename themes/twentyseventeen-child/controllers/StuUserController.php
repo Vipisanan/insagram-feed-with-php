@@ -50,7 +50,10 @@ class StudioUserController extends WP_REST_Controller
 
     function getStudioUserById(WP_REST_Request $request){
         $studioUserService = new StudioUserService();
-        $result = $studioUserService->getStudioUserById($request);
+        $params = $request->get_params();
+
+        $id = (int)$params['user_id'];
+        $result = $studioUserService->getStudioUserById($id);
 
         if (empty($result)) {
             return new WP_Error('empty user', 'there is no user in this id', array('status' => 404));

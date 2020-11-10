@@ -17,6 +17,12 @@ class ScheduleService{
         return $all_schedule;
     }
 
+    public function getAllScheduleByInvoiceId($id){
+        global $wpdb;
+        $all_schedule = $wpdb->get_results("SELECT * FROM wp_std_booking_schedule WHERE invoice_id = '$id'");
+        return $all_schedule;
+    }
+
     public function addSlot($request)
     {
         global $wpdb;

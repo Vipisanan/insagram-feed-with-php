@@ -15,12 +15,10 @@ class StudioUserService {
         return $result;
     }
 
-    public function getStudioUserById(WP_REST_Request $request) {
+    public function getStudioUserById($id) {
         global $wpdb;
-        $params = $request->get_params();
 
         $table_name = $wpdb->prefix . "std_user";
-        $id = (int)$params['user_id'];
 
         return $wpdb->get_results("SELECT * FROM $table_name WHERE id = $id");
 

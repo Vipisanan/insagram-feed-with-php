@@ -21,6 +21,11 @@ include ('controllers/StuUserController.php');
 include('services/ScheduleService.php');
 include ('controllers/ScheduleController.php');
 
+include('services/InvoiceService.php');
+include ('controllers/InvoiceController.php');
+
+include ('services/roomService.php');
+
 include('utils/Util.php');
 
 
@@ -34,6 +39,9 @@ add_action('rest_api_init', function () {
 
     $studio_scheduler_controller = new StudioScheduleController();
     $studio_scheduler_controller->register_routes();
+
+    $studio_invoice_controller = new StudioInvoiceController();
+    $studio_invoice_controller->register_routes();
 });
 
 
