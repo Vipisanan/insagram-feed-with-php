@@ -2,9 +2,17 @@
 
 class ScheduleService{
 
-    public function getAllSlots()
+    public function getAllSlotsFromToday()
     {
         global $wpdb;
+        $today = date("Y-m-d H:i:s");
+        $all_schedule = $wpdb->get_results("SELECT * FROM wp_std_booking_schedule WHERE schedule > '$today'");
+        return $all_schedule;
+    }
+
+    public function getAllSlots(){
+        global $wpdb;
+        $today = date("Y-m-d H:i:s");
         $all_schedule = $wpdb->get_results("SELECT * FROM wp_std_booking_schedule");
         return $all_schedule;
     }

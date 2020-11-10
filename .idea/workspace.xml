@@ -20,15 +20,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="723e5bf0-580b-49cc-b5a7-d321feeb1216" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/themes/twentyseventeen-child/controllers/ScheduleController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/themes/twentyseventeen-child/controllers/StuUserController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/themes/twentyseventeen-child/services/ScheduleService.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/themes/twentyseventeen-child/services/StudioUserService.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/themes/twentyseventeen-child/utils/Utill.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/twentyseventeen-child/Custom_endpoints.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/twentyseventeen-child/UnwantedFiles/Custom_endpoints.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/twentyseventeen-child/backupfile.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/twentyseventeen-child/UnwantedFiles/backupfile.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/twentyseventeen-child/functions.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/twentyseventeen-child/functions.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/twentyseventeen-child/controllers/ScheduleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/twentyseventeen-child/controllers/ScheduleController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/twentyseventeen-child/services/ScheduleService.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/twentyseventeen-child/services/ScheduleService.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,7 +93,7 @@
       <workItem from="1604837946532" duration="420000" />
       <workItem from="1604841140413" duration="1116000" />
       <workItem from="1604853597885" duration="1734000" />
-      <workItem from="1604978975242" duration="5594000" />
+      <workItem from="1604978975242" duration="7360000" />
     </task>
     <servers />
   </component>
@@ -122,6 +117,10 @@
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="713" y="354" width="551" height="396" key="#com.intellij.fileTypes.FileTypeChooser/67.27.1853.1053@67.27.1853.1053" timestamp="1604571252376" />
+    <state x="726" y="301" width="524" height="502" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1604987040681">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="726" y="301" width="524" height="502" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1604987040681" />
     <state x="167" y="125" width="1653" height="855" key="DiffContextDialog" timestamp="1604591738169">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
