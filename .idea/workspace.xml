@@ -20,7 +20,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="723e5bf0-580b-49cc-b5a7-d321feeb1216" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/themes/twentyseventeen-child/controllers/ScheduleController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/themes/twentyseventeen-child/controllers/StuUserController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/themes/twentyseventeen-child/services/ScheduleService.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/themes/twentyseventeen-child/services/StudioUserService.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/themes/twentyseventeen-child/utils/Utill.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/twentyseventeen-child/Custom_endpoints.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/twentyseventeen-child/UnwantedFiles/Custom_endpoints.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/twentyseventeen-child/backupfile.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/twentyseventeen-child/UnwantedFiles/backupfile.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/themes/twentyseventeen-child/functions.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/twentyseventeen-child/functions.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -56,20 +63,20 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/themes/twentyseventeen-child/UnwantedFiles" />
+      <recent name="$PROJECT_DIR$/themes/twentyseventeen-child/services" />
       <recent name="$PROJECT_DIR$/themes" />
       <recent name="$PROJECT_DIR$/plugins/custom-api" />
     </key>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -85,7 +92,13 @@
       <updated>1604489505913</updated>
       <workItem from="1604489506989" duration="49000" />
       <workItem from="1604489635954" duration="21020000" />
-      <workItem from="1604566757830" duration="54000000" />
+      <workItem from="1604566757830" duration="54691000" />
+      <workItem from="1604685592225" duration="716000" />
+      <workItem from="1604745279852" duration="602000" />
+      <workItem from="1604837946532" duration="420000" />
+      <workItem from="1604841140413" duration="1116000" />
+      <workItem from="1604853597885" duration="1734000" />
+      <workItem from="1604978975242" duration="5594000" />
     </task>
     <servers />
   </component>
@@ -102,6 +115,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="713" y="354" width="551" height="396" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1604571252376">
@@ -112,14 +126,14 @@
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="167" y="125" width="1653" height="855" key="DiffContextDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1604591738169" />
-    <state x="704" y="272" width="731" height="561" key="NewPhpClassDialog" timestamp="1604679737281">
+    <state x="704" y="272" width="721" height="561" key="NewPhpClassDialog" timestamp="1604979052906">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="704" y="272" width="731" height="561" key="NewPhpClassDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1604679737281" />
-    <state x="789" y="478" width="399" height="149" key="NewPhpFileDialog" timestamp="1604651831685">
+    <state x="704" y="272" width="721" height="561" key="NewPhpClassDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1604979052906" />
+    <state x="789" y="478" width="399" height="149" key="NewPhpFileDialog" timestamp="1604984292334">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="789" y="478" width="399" height="149" key="NewPhpFileDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1604651831685" />
+    <state x="789" y="478" width="399" height="149" key="NewPhpFileDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1604984292334" />
     <state x="656" y="257" width="672" height="678" key="search.everywhere.popup" timestamp="1604647958096">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>

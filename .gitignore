@@ -6,6 +6,7 @@
 /upload
 /themes/twentyseventeen/page
 /themes/twentyseventeen-child/Utill.php
+/themes/twentyseventeen-child/utils/Util.php
 .env
 .env.backup
 .phpunit.result.cache

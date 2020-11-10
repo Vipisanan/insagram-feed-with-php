@@ -15,11 +15,27 @@ add_action('wp_enqueue_scripts', 'theme_enqueue_styles');
 
 
 //-------------------------------------------api----------------------------
+include('services/StudioUserService.php');
+include ('controllers/StuUserController.php');
+
+include('services/ScheduleService.php');
+include ('controllers/ScheduleController.php');
+
+include('utils/Util.php');
+
+
 
 add_action('rest_api_init', function () {
     $custom_posts_controller = new Custom_Posts_Controller();
     $custom_posts_controller->register_routes();
+
+    $studio_user_controller = new StudioUserController();
+    $studio_user_controller->register_routes();
+
+    $studio_scheduler_controller = new StudioScheduleController();
+    $studio_scheduler_controller->register_routes();
 });
+
 
 class Custom_Posts_Controller extends WP_REST_Controller
 {
@@ -86,6 +102,7 @@ class Custom_Posts_Controller extends WP_REST_Controller
                 ),
             )
         ]);
+
         register_rest_route($namespace, '/' . 'insta', [
             array(
                 'methods' => 'GET',
@@ -124,8 +141,8 @@ class Custom_Posts_Controller extends WP_REST_Controller
         return $response;
     }
 
-    function get_all_std_user()
-    {
+    function get_all_std_user(){
+
         global $wpdb;
         $table_name = $wpdb->prefix . "std_user";
         /*
@@ -235,7 +252,8 @@ class Custom_Posts_Controller extends WP_REST_Controller
 
     function get_insta_feed(){
         $fields = "id,caption,media_type,media_url,permalink,thumbnail_url,timestamp,username";
-        $limit = 30;
+        $limit = 15;
+        $token = DaysOfWeek::instaToken;
         $json_feed_url = "https://graph.instagram.com/me/media?fields={$fields}&access_token={$token}&limit={$limit}";
         $json_feed = @file_get_contents($json_feed_url);
         $json_instagram_feeds =json_decode($json_feed, true, 512, JSON_BIGINT_AS_STRING);
