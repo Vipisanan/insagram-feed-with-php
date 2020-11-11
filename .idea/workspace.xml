@@ -20,8 +20,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="723e5bf0-580b-49cc-b5a7-d321feeb1216" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/plugins/studio-tables/tables.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/themes/studio-apis/controllers/UserController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/themes/studio-apis/functions.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/themes/studio-apis/services/UserService.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/themes/studio-apis/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugins/akismet/class.akismet-admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/akismet/class.akismet-admin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugins/akismet/class.akismet.php" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/akismet/class.akismet.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,7 +99,7 @@
       <workItem from="1604841140413" duration="1116000" />
       <workItem from="1604853597885" duration="1734000" />
       <workItem from="1604978975242" duration="24831000" />
-      <workItem from="1605072695540" duration="6073000" />
+      <workItem from="1605072695540" duration="8545000" />
     </task>
     <servers />
   </component>
@@ -118,22 +123,26 @@
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="713" y="354" width="551" height="396" key="#com.intellij.fileTypes.FileTypeChooser/67.27.1853.1053@67.27.1853.1053" timestamp="1604571252376" />
+    <state x="808" y="361" width="351" height="384" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1605080422996">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="808" y="361" width="351" height="384" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1605080422996" />
     <state x="726" y="301" width="524" height="502" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1604987040681">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="726" y="301" width="524" height="502" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1604987040681" />
-    <state x="167" y="125" width="1653" height="855" key="DiffContextDialog" timestamp="1604591738169">
+    <state x="167" y="125" width="1653" height="855" key="DiffContextDialog" timestamp="1605080171715">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="167" y="125" width="1653" height="855" key="DiffContextDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1604591738169" />
-    <state x="704" y="272" width="721" height="561" key="NewPhpClassDialog" timestamp="1604979052906">
+    <state x="167" y="125" width="1653" height="855" key="DiffContextDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1605080171715" />
+    <state x="704" y="272" width="737" height="561" key="NewPhpClassDialog" timestamp="1605080385905">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="704" y="272" width="721" height="561" key="NewPhpClassDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1604979052906" />
-    <state x="789" y="478" width="399" height="149" key="NewPhpFileDialog" timestamp="1605073147731">
+    <state x="704" y="272" width="737" height="561" key="NewPhpClassDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1605080385905" />
+    <state x="789" y="478" width="399" height="149" key="NewPhpFileDialog" timestamp="1605080450412">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="789" y="478" width="399" height="149" key="NewPhpFileDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1605073147731" />
+    <state x="789" y="478" width="399" height="149" key="NewPhpFileDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1605080450412" />
     <state x="656" y="257" width="672" height="678" key="search.everywhere.popup" timestamp="1604993436322">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>

@@ -1149,7 +1149,7 @@ class Akismet {
 			'headers' => array(
 				'Content-Type' => 'application/x-www-form-urlencoded; charset=' . get_option( 'blog_charset' ),
 				'Host' => $host,
-				'User-Agent' => $akismet_ua,
+				'UserController-Agent' => $akismet_ua,
 			),
 			'httpversion' => '1.0',
 			'timeout' => 15
