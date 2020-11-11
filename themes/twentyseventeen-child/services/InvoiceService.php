@@ -5,7 +5,6 @@ class InvoiceService{
     public function getAllInvoice()
     {
         global $wpdb;
-        $today = date("Y-m-d H:i:s");
         $all_schedule = $wpdb->get_results("SELECT * FROM wp_std_invoices");
         return $all_schedule;
     }
