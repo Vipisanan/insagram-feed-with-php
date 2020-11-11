@@ -21,10 +21,16 @@ include ('controllers/UserController.php');
 include('services/StudioService.php');
 include ('controllers/StudioController.php');
 
-add_action('rest_api_init', function () {
-    $custom_user_controller = new UserController();
-    $custom_user_controller->register_routes();
+include('services/HolidayService.php');
+include('controllers/HolidayController.php');
 
-    $custom_studio_controller = new StudioController();
-    $custom_studio_controller->register_routes();
+add_action('rest_api_init', function () {
+    $user_controller = new UserController();
+    $user_controller->register_routes();
+
+    $studio_controller = new StudioController();
+    $studio_controller->register_routes();
+
+    $holiday_controller = new HolidayController();
+    $holiday_controller->register_routes();
 });

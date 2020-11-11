@@ -33,7 +33,8 @@ $booking_tbl = "CREATE TABLE std_booking_details (
     grand_total float,
     payment_status VARCHAR(50),
     gate_way_response json NOT NULL,
-    created_at datetime NOT NULL
+    created_at datetime NOT NULL,
+    FOREIGN KEY (user_id) REFERENCES std_user(id)    
 ) $charset_collate;";
 
 
@@ -93,8 +94,8 @@ $holidays = "CREATE TABLE std_holidays (
     id bigint(20) AUTO_INCREMENT PRIMARY KEY,
     reason VARCHAR(20),
     type VARCHAR(20),
-    open datetime NOT NULL,
-    close datetime NOT NULL,
+    open datetime,
+    close datetime,
     created_at datetime NOT NULL
 ) $charset_collate;";
 
