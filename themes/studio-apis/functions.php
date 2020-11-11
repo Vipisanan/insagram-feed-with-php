@@ -18,7 +18,13 @@ add_action('wp_enqueue_scripts', 'theme_enqueue_styles');
 include('services/UserService.php');
 include ('controllers/UserController.php');
 
+include('services/StudioService.php');
+include ('controllers/StudioController.php');
+
 add_action('rest_api_init', function () {
-    $custom_posts_controller = new UserController();
-    $custom_posts_controller->register_routes();
+    $custom_user_controller = new UserController();
+    $custom_user_controller->register_routes();
+
+    $custom_studio_controller = new StudioController();
+    $custom_studio_controller->register_routes();
 });

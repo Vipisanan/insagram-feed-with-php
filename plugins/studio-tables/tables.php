@@ -26,12 +26,13 @@ $booking_tbl = "CREATE TABLE std_booking_details (
     booking_type VARCHAR(20),
     sub_total float,
     discount float,
-    total float,
+    total float,   
+    promo_code VARCHAR(20),
+    promo_code_discount float ,
     tax float,
     grand_total float,
     payment_status VARCHAR(50),
-    payment_id bigint(20) NOT NULL,
-    promo_id bigint(20) NOT NULL,
+    gate_way_response json NOT NULL,
     created_at datetime NOT NULL
 ) $charset_collate;";
 
@@ -40,8 +41,8 @@ $studio = "CREATE TABLE std_studio (
     id bigint(20) AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(50),
     status VARCHAR(50),
-    max_studio_reservation int,
-    max_makeup_station_reservation int,
+    type VARCHAR(50),
+    max_reservation int,
     tax float,
     price float,
     created_at datetime NOT NULL
