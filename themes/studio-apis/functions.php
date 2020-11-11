@@ -24,6 +24,9 @@ include ('controllers/StudioController.php');
 include('services/HolidayService.php');
 include('controllers/HolidayController.php');
 
+include('services/SlotService.php');
+include('controllers/SlotController.php');
+
 add_action('rest_api_init', function () {
     $user_controller = new UserController();
     $user_controller->register_routes();
@@ -33,4 +36,7 @@ add_action('rest_api_init', function () {
 
     $holiday_controller = new HolidayController();
     $holiday_controller->register_routes();
+
+    $slots_controller = new SlotController();
+    $slots_controller->register_routes();
 });
