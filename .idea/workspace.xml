@@ -20,11 +20,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="723e5bf0-580b-49cc-b5a7-d321feeb1216" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/themes/studio-apis/controllers/BookingDetailsController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/themes/studio-apis/services/BookingDetailsService.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/studio-tables/tables.php" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/studio-tables/tables.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/studio-apis/functions.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/studio-apis/functions.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/studio-apis/services/BookingDetailsService.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/studio-apis/services/BookingDetailsService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/studio-apis/services/SlotService.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/studio-apis/services/SlotService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/studio-apis/services/UserService.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/studio-apis/services/UserService.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,7 +97,7 @@
       <workItem from="1605072695540" duration="8670000" />
       <workItem from="1605113728629" duration="5253000" />
       <workItem from="1605161721418" duration="1440000" />
-      <workItem from="1605172865399" duration="3861000" />
+      <workItem from="1605172865399" duration="15292000" />
     </task>
     <servers />
   </component>
