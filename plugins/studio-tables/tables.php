@@ -15,6 +15,7 @@ $user = "CREATE TABLE std_user (
     email VARCHAR(50),
     name VARCHAR(30),
     address VARCHAR(30),
+    phone VARCHAR(30),
     role VARCHAR(30),
     created_at datetime NOT NULL,
     FOREIGN KEY (wp_user_id) REFERENCES wp_users(ID)    
@@ -24,6 +25,9 @@ $booking_tbl = "CREATE TABLE std_booking_details (
     id bigint(20) AUTO_INCREMENT PRIMARY KEY,
     user_id bigint(20) NOT NULL,
     booking_type VARCHAR(20),
+    photographer_name VARCHAR(30),
+    shoot_type VARCHAR(30),
+    note VARCHAR(30),
     sub_total float,
     discount float,
     total float,   
