@@ -20,9 +20,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="723e5bf0-580b-49cc-b5a7-d321feeb1216" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/themes/studio-apis/controllers/SlotController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/themes/studio-apis/services/SlotService.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/themes/studio-apis/controllers/BookingDetailsController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/themes/studio-apis/services/BookingDetailsService.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugins/studio-tables/tables.php" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/studio-tables/tables.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/themes/studio-apis/functions.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/studio-apis/functions.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -95,7 +96,9 @@
       <workItem from="1604853597885" duration="1734000" />
       <workItem from="1604978975242" duration="24831000" />
       <workItem from="1605072695540" duration="8670000" />
-      <workItem from="1605113728629" duration="5111000" />
+      <workItem from="1605113728629" duration="5253000" />
+      <workItem from="1605161721418" duration="1440000" />
+      <workItem from="1605172865399" duration="3861000" />
     </task>
     <servers />
   </component>
@@ -135,10 +138,10 @@
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="704" y="272" width="737" height="561" key="NewPhpClassDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1605080385905" />
-    <state x="789" y="478" width="399" height="149" key="NewPhpFileDialog" timestamp="1605120503017">
+    <state x="789" y="478" width="399" height="149" key="NewPhpFileDialog" timestamp="1605172961526">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="789" y="478" width="399" height="149" key="NewPhpFileDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1605120503017" />
+    <state x="789" y="478" width="399" height="149" key="NewPhpFileDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1605172961526" />
     <state x="657" y="253" width="672" height="677" key="run.anything.popup" timestamp="1605114079635">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
