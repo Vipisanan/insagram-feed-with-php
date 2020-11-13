@@ -39,9 +39,6 @@ class SlotController extends WP_REST_Controller
 
         $service = new SlotService();
         $res = $service->getAllSlotsByStudio($id);
-        if (empty($res)){
-            return new WP_Error('empty slots', 'there is no slots for this id', array('status' => 404));
-        }
         return $res;
     }
 }
