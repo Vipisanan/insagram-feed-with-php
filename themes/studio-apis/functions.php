@@ -30,6 +30,9 @@ include('controllers/SlotController.php');
 include('services/BookingDetailsService.php');
 include('controllers/BookingDetailsController.php');
 
+include('services/DiscountService.php');
+include('controllers/DiscountController.php');
+
 add_action('rest_api_init', function () {
     $user_controller = new UserController();
     $user_controller->register_routes();
@@ -45,4 +48,7 @@ add_action('rest_api_init', function () {
 
     $booking_details_controller = new BookingDetailsController();
     $booking_details_controller->register_routes();
+
+    $discount_controller = new DiscountController();
+    $discount_controller->register_routes();
 });
