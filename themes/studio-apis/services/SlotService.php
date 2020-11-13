@@ -9,6 +9,15 @@ class SlotService
         return $res;
     }
 
+    public function getAllSlotsByStudio($studio_id){
+        global $wpdb;
+        $today = date("Y-m-d H:i:s");
+
+//        hove to change query as from today
+        $res = $wpdb->get_results("SELECT * FROM std_booking_slot WHERE studio_id ='$studio_id' AND slot > '$today'");
+        return $res;
+    }
+
     public function addSlot($slot_data , $booking_id){
         global $wpdb;
         $slot = $slot_data['slot'];

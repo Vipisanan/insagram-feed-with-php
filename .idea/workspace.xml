@@ -21,9 +21,8 @@
   <component name="ChangeListManager">
     <list default="true" id="723e5bf0-580b-49cc-b5a7-d321feeb1216" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/studio-apis/services/BookingDetailsService.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/studio-apis/services/BookingDetailsService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/studio-apis/controllers/SlotController.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/studio-apis/controllers/SlotController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/themes/studio-apis/services/SlotService.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/studio-apis/services/SlotService.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/studio-apis/services/UserService.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/studio-apis/services/UserService.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,19 +63,6 @@
       <recent name="$PROJECT_DIR$/plugins/custom-api" />
     </key>
   </component>
-  <component name="RunManager">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -97,7 +83,8 @@
       <workItem from="1605072695540" duration="8670000" />
       <workItem from="1605113728629" duration="5253000" />
       <workItem from="1605161721418" duration="1440000" />
-      <workItem from="1605172865399" duration="15292000" />
+      <workItem from="1605172865399" duration="15951000" />
+      <workItem from="1605238955503" duration="547000" />
     </task>
     <servers />
   </component>
@@ -141,10 +128,10 @@
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="789" y="478" width="399" height="149" key="NewPhpFileDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1605172961526" />
-    <state x="657" y="253" width="672" height="677" key="run.anything.popup" timestamp="1605114079635">
+    <state x="657" y="253" width="672" height="677" key="run.anything.popup" timestamp="1605239255409">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="657" y="253" width="672" height="677" key="run.anything.popup/67.27.1853.1053@67.27.1853.1053" timestamp="1605114079635" />
+    <state x="657" y="253" width="672" height="677" key="run.anything.popup/67.27.1853.1053@67.27.1853.1053" timestamp="1605239255409" />
     <state x="656" y="257" width="672" height="678" key="search.everywhere.popup" timestamp="1604993436322">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
