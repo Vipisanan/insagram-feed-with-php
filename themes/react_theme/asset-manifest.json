@@ -8,8 +8,7 @@
     "main.js.map": "/wordpress/wp-content/themes/react_theme/static/js/main.chunk.js.map",
     "runtime-main.js": "/wordpress/wp-content/themes/react_theme/static/js/bundle.js",
     "runtime-main.js.map": "/wordpress/wp-content/themes/react_theme/static/js/bundle.js.map",
-    "index.php": "/wordpress/wp-content/themes/react_theme/index.php",
-    "static/media/logo.svg": "/wordpress/wp-content/themes/react_theme/static/media/logo.5d5d9eef.svg"
+    "index.php": "/wordpress/wp-content/themes/react_theme/index.php"
   },
   "entrypoints": [
     "static/js/bundle.js",

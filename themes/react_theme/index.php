@@ -39,7 +39,7 @@
         Learn how to configure a non-root public URL by running `npm run wpbuild`.
     -->
     <title>React WordPress Theme</title>
-<link href="/wordpress/wp-content/themes/react_theme/static/css/main.chunk.css?5fd5a0863a2c17306bf8" rel="stylesheet"></head>
+<link href="/wordpress/wp-content/themes/react_theme/static/css/main.chunk.css?9ffa2c237b128a751326" rel="stylesheet"></head>
     <body>
     <noscript>
         You need to enable JavaScript to run this app.
@@ -55,5 +55,5 @@
         To begin the development, run `npm run wpstart` or `yarn wpstart`.
         To create a production bundle, use `npm run wpbuild` or `yarn wpbuild`.
     -->
-    <script src="/wordpress/wp-content/themes/react_theme/static/js/bundle.js?5fd5a0863a2c17306bf8"></script><script src="/wordpress/wp-content/themes/react_theme/static/js/0.chunk.js?5fd5a0863a2c17306bf8"></script><script src="/wordpress/wp-content/themes/react_theme/static/js/main.chunk.js?5fd5a0863a2c17306bf8"></script></body>
+    <script src="/wordpress/wp-content/themes/react_theme/static/js/bundle.js?9ffa2c237b128a751326"></script><script src="/wordpress/wp-content/themes/react_theme/static/js/0.chunk.js?9ffa2c237b128a751326"></script><script src="/wordpress/wp-content/themes/react_theme/static/js/main.chunk.js?9ffa2c237b128a751326"></script></body>
 </html>
