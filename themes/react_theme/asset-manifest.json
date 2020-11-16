@@ -1,18 +1,25 @@
 {
   "files": {
-    "static/js/0.chunk.js": "/wordpress/wp-content/themes/react_theme/static/js/0.chunk.js",
-    "static/js/0.chunk.js.map": "/wordpress/wp-content/themes/react_theme/static/js/0.chunk.js.map",
+    "static/css/1.chunk.css": "/wordpress/wp-content/themes/react_theme/static/css/1.chunk.css",
+    "static/js/1.chunk.js": "/wordpress/wp-content/themes/react_theme/static/js/1.chunk.js",
+    "static/css/1.chunk.css.map": "/wordpress/wp-content/themes/react_theme/static/css/1.chunk.css.map",
+    "static/js/1.chunk.js.map": "/wordpress/wp-content/themes/react_theme/static/js/1.chunk.js.map",
     "main.css": "/wordpress/wp-content/themes/react_theme/static/css/main.chunk.css",
     "main.js": "/wordpress/wp-content/themes/react_theme/static/js/main.chunk.js",
     "main.css.map": "/wordpress/wp-content/themes/react_theme/static/css/main.chunk.css.map",
     "main.js.map": "/wordpress/wp-content/themes/react_theme/static/js/main.chunk.js.map",
     "runtime-main.js": "/wordpress/wp-content/themes/react_theme/static/js/bundle.js",
     "runtime-main.js.map": "/wordpress/wp-content/themes/react_theme/static/js/bundle.js.map",
-    "index.php": "/wordpress/wp-content/themes/react_theme/index.php"
+    "index.php": "/wordpress/wp-content/themes/react_theme/index.php",
+    "static/media/Christmas-1.jpg": "/wordpress/wp-content/themes/react_theme/static/media/Christmas-1.389c88c1.jpg",
+    "static/media/angle-left-solid.svg": "/wordpress/wp-content/themes/react_theme/static/media/angle-left-solid.aad86071.svg",
+    "static/media/angle-right-solid.svg": "/wordpress/wp-content/themes/react_theme/static/media/angle-right-solid.fbb21171.svg",
+    "static/media/bg1.png": "/wordpress/wp-content/themes/react_theme/static/media/bg1.93ab94da.png"
   },
   "entrypoints": [
     "static/js/bundle.js",
-    "static/js/0.chunk.js",
+    "static/css/1.chunk.css",
+    "static/js/1.chunk.js",
     "static/css/main.chunk.css",
     "static/js/main.chunk.js"
   ]

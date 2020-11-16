@@ -20,21 +20,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="723e5bf0-580b-49cc-b5a7-d321feeb1216" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/themes/react_theme/react-src/src/pages/About.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/themes/react_theme/react-src/src/pages/Home.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/themes/react_theme/react-src/src/pages/Studios.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/themes/react_theme/react-src/src/pages/core/Footer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/themes/react_theme/react-src/src/pages/core/NavBar.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/themes/react_theme/react-src/src/pages/style/calendar.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/themes/react_theme/react-src/src/pages/style/component.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/react_theme/asset-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/themes/react_theme/asset-manifest.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/themes/react_theme/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/react_theme/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/react_theme/react-src/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/themes/react_theme/react-src/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/themes/react_theme/react-src/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/themes/react_theme/react-src/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/react_theme/react-src/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/themes/react_theme/react-src/src/pages/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/react_theme/react-src/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/themes/react_theme/react-src/src/pages/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/react_theme/react-src/src/App.test.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/react_theme/react-src/src/index.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/react_theme/react-src/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/themes/react_theme/react-src/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/react_theme/react-src/src/logo.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/react_theme/static/css/main.chunk.css" beforeDir="false" afterPath="$PROJECT_DIR$/themes/react_theme/static/css/main.chunk.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/react_theme/static/css/main.chunk.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/themes/react_theme/static/css/main.chunk.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/react_theme/react-src/src/pages/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/themes/react_theme/react-src/src/pages/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/themes/react_theme/static/js/main.chunk.js" beforeDir="false" afterPath="$PROJECT_DIR$/themes/react_theme/static/js/main.chunk.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/themes/react_theme/static/js/main.chunk.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/themes/react_theme/static/js/main.chunk.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/react_theme/static/media/logo.5d5d9eef.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/studio-apis/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/themes/studio-apis/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,32 +65,23 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/themes/react_theme/react-src/src/pages" />
     <property name="list.type.of.created.stylesheet" value="SCSS" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/themes/react_theme/react-src/src/pages" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/themes/react_theme" />
       <recent name="$PROJECT_DIR$/themes/react_theme/react-src/src/pages" />
       <recent name="$PROJECT_DIR$/themes/twentyseventeen-child/UnwantedFiles" />
       <recent name="$PROJECT_DIR$/themes/twentyseventeen-child/services" />
       <recent name="$PROJECT_DIR$/themes" />
-      <recent name="$PROJECT_DIR$/plugins/custom-api" />
     </key>
-  </component>
-  <component name="RunManager">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -119,7 +110,16 @@
       <workItem from="1605288033355" duration="1138000" />
       <workItem from="1605368019002" duration="3113000" />
       <workItem from="1605372039950" duration="1518000" />
-      <workItem from="1605373659351" duration="1392000" />
+      <workItem from="1605373659351" duration="1670000" />
+      <workItem from="1605375388085" duration="13000" />
+      <workItem from="1605412586129" duration="4522000" />
+      <workItem from="1605426770956" duration="1286000" />
+      <workItem from="1605437202276" duration="4912000" />
+      <workItem from="1605459094571" duration="42000" />
+      <workItem from="1605504508850" duration="1224000" />
+      <workItem from="1605526196990" duration="754000" />
+      <workItem from="1605530191312" duration="5254000" />
+      <workItem from="1605539958384" duration="231000" />
     </task>
     <servers />
   </component>
@@ -151,10 +151,10 @@
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="726" y="301" width="524" height="502" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1605374932482" />
-    <state x="167" y="125" width="1653" height="855" key="DiffContextDialog" timestamp="1605264690964">
+    <state x="167" y="125" width="1653" height="855" key="DiffContextDialog" timestamp="1605447603069">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="167" y="125" width="1653" height="855" key="DiffContextDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1605264690964" />
+    <state x="167" y="125" width="1653" height="855" key="DiffContextDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1605447603069" />
     <state x="629" y="330" width="719" height="445" key="EditFileWatcherDialog" timestamp="1605374409713">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
