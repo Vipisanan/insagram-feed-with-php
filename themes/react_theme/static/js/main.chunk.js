@@ -2472,6 +2472,7 @@ class Studios extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
         studio,
         locallyAddedSlots
       } = this.state;
+      console.log(locallyAddedSlots);
       let dateWithTime = [];
 
       for (let i = 0; i < 12; i++) {
@@ -2487,13 +2488,22 @@ class Studios extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       }
 
       let slots = await Object(_services_ScheduleService__WEBPACK_IMPORTED_MODULE_4__["getAllSchedule"])(studio.id);
+      const groupByDate = Object(lodash__WEBPACK_IMPORTED_MODULE_5__["chain"])(slots).groupBy('slot').map((value, key) => ({
+        data: value,
+        date: key
+      })).value();
+      let availableSlots = [];
+      groupByDate.forEach(byDate => {
+        availableSlots = slots.filter(slot => byDate.date === slot.slot && byDate.data.length <= studio.max_reservation);
+      });
       locallyAddedSlots.forEach(localSlots => {
         slots.push(localSlots);
       });
+      console.log(groupByDate, availableSlots, slots, dateWithTime);
       this.setState(state => {
         return {
           timeSchedule: dateWithTime,
-          busySlots: slots
+          busySlots: availableSlots
         };
       }, () => this.bookedSlotTimeMapping());
     };
@@ -2506,6 +2516,7 @@ class Studios extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
         studio
       } = this.state;
       let newColSchedule = [];
+      let noOfSlot = 0;
 
       if (locallyAddedSlots.length > 0) {
         locallyAddedSlots.forEach(localSlots => {
@@ -2544,77 +2555,152 @@ class Studios extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
     };
 
     this.addSchedule = date => {
-      this.setState({
-        isLoading: true
-      });
-      const {
-        timeSchedule,
-        studio,
-        studios,
-        locallyAddedSlots
-      } = this.state;
-      let dateWithTime = [];
-      let localSlots = []; //add to local which slot booked.
+      console.log(date); //have to add as lock slot here
+      //call quary
 
-      localSlots = locallyAddedSlots;
-      localSlots.push({
-        studio_id: studio.id,
-        slot: date.dateWithTime
-      }); //reserved slot from calendar
+      if (date.status === 'available') {
+        this.setState({
+          isLoading: true
+        });
+        const {
+          timeSchedule,
+          studio,
+          studios,
+          locallyAddedSlots
+        } = this.state;
+        let dateWithTime = [];
+        let localSlots = []; //add to local which slot booked.
 
-      for (let i = 0; i < 12; i++) {
-        const row = timeSchedule[i].map((item, index) => ({ ...item,
-          dateWithTime: item.dateWithTime,
-          status: item.status === 'available' ? item.dateWithTime === date.dateWithTime ? 'booking' : item.status : item.status
-        }));
-        dateWithTime.push(row);
+        localSlots = locallyAddedSlots;
+        localSlots.push({
+          studio_id: studio.id,
+          slot: date.dateWithTime
+        }); //reserved slot from calendar
+
+        for (let i = 0; i < 12; i++) {
+          const row = timeSchedule[i].map((item, index) => ({ ...item,
+            dateWithTime: item.dateWithTime,
+            status: item.status === 'available' ? item.dateWithTime === date.dateWithTime ? 'booking' : item.status : item.status
+          }));
+          dateWithTime.push(row);
+        }
+
+        const lData = localSlots.map((item, index) => ({ ...item,
+          date: moment__WEBPACK_IMPORTED_MODULE_3___default()(item.slot).format('YYYY-MM-DD'),
+          studio: studios.filter(std => std.id === item.studio_id)
+        })); //first group by studio
+
+        const groupByStudios = Object(lodash__WEBPACK_IMPORTED_MODULE_5__["chain"])(lData).groupBy('studio_id').map((value, key) => ({
+          studio_id: key,
+          data: value
+        })).value(); //second group by date
+
+        let groupByDate = [];
+        groupByStudios.forEach(stuGroup => {
+          const dateGroup = Object(lodash__WEBPACK_IMPORTED_MODULE_5__["chain"])(stuGroup.data).groupBy('date').map((value, key) => ({
+            date: key,
+            data: value
+          })).value();
+          groupByDate.push(dateGroup);
+        });
+        sweetalert2__WEBPACK_IMPORTED_MODULE_9___default.a.fire({
+          toast: true,
+          position: 'top',
+          icon: 'success',
+          title: `Added ${moment__WEBPACK_IMPORTED_MODULE_3___default()(date.dateWithTime).format('YYYY-MM-DD HH:mm:A')} slot to cart.`,
+          showClass: {
+            popup: 'animate__animated animate__fadeInDown' // icon: '',
+
+          },
+          hideClass: {
+            popup: 'animate__animated animate__fadeOutUp'
+          },
+          timer: 2000,
+          timerProgressBar: true,
+          showConfirmButton: false,
+          width: 'auto',
+          padding: '14px'
+        });
+        this.setState({
+          timeSchedule: dateWithTime,
+          bookedSchedule: groupByDate,
+          locallyAddedSlots: localSlots,
+          isLoading: false
+        });
       }
 
-      const lData = localSlots.map((item, index) => ({ ...item,
-        date: moment__WEBPACK_IMPORTED_MODULE_3___default()(item.slot).format('YYYY-MM-DD'),
-        studio: studios.filter(std => std.id === item.studio_id)
-      })); //first group by studio
+      if (date.status === "booking") {
+        const {
+          timeSchedule,
+          locallyAddedSlots,
+          studios,
+          studio
+        } = this.state;
+        let dateWithTime = [];
+        let localSlots = []; //removed to local which slot booked.
 
-      const groupByStudios = Object(lodash__WEBPACK_IMPORTED_MODULE_5__["chain"])(lData).groupBy('studio_id').map((value, key) => ({
-        studio_id: key,
-        data: value
-      })).value(); //second group by date
+        console.log(locallyAddedSlots);
+        localSlots = locallyAddedSlots.filter(slot => !Object(lodash__WEBPACK_IMPORTED_MODULE_5__["isEqual"])(slot, {
+          studio_id: date.studio_id,
+          slot: date.dateWithTime
+        }));
+        console.log(localSlots);
 
-      let groupByDate = [];
-      groupByStudios.forEach(stuGroup => {
-        const dateGroup = Object(lodash__WEBPACK_IMPORTED_MODULE_5__["chain"])(stuGroup.data).groupBy('date').map((value, key) => ({
-          date: key,
+        for (let i = 0; i < 12; i++) {
+          const row = timeSchedule[i].map((item, index) => ({ ...item,
+            dateWithTime: item.dateWithTime,
+            status: item.status === 'booking' ? item.dateWithTime === date.dateWithTime ? 'available' : item.status : item.status
+          }));
+          dateWithTime.push(row);
+        } //remove from local
+
+
+        const lData = localSlots.map(item => ({ ...item,
+          date: moment__WEBPACK_IMPORTED_MODULE_3___default()(item.slot).format('YYYY-MM-DD'),
+          studio: studios.filter(std => std.id === item.studio_id)
+        })); //first group by studio
+
+        const groupByStudios = Object(lodash__WEBPACK_IMPORTED_MODULE_5__["chain"])(lData).groupBy('studio_id').map((value, key) => ({
+          studio_id: key,
           data: value
-        })).value();
-        groupByDate.push(dateGroup);
-      });
-      sweetalert2__WEBPACK_IMPORTED_MODULE_9___default.a.fire({
-        toast: true,
-        position: 'top',
-        icon: 'success',
-        title: `Added ${moment__WEBPACK_IMPORTED_MODULE_3___default()(date.dateWithTime).format('YYYY-MM-DD HH:mm:A')} slot to cart.`,
-        showClass: {
-          popup: 'animate__animated animate__fadeInDown' // icon: '',
+        })).value(); //second group by date
 
-        },
-        hideClass: {
-          popup: 'animate__animated animate__fadeOutUp'
-        },
-        timer: 2000,
-        timerProgressBar: true,
-        showConfirmButton: false,
-        width: 'auto',
-        padding: '14px'
-      });
-      this.setState({
-        timeSchedule: dateWithTime,
-        bookedSchedule: groupByDate,
-        locallyAddedSlots: localSlots,
-        isLoading: false
-      });
+        let groupByDate = [];
+        groupByStudios.forEach(stuGroup => {
+          const dateGroup = Object(lodash__WEBPACK_IMPORTED_MODULE_5__["chain"])(stuGroup.data).groupBy('date').map((value, key) => ({
+            date: key,
+            data: value
+          })).value();
+          groupByDate.push(dateGroup);
+        });
+        sweetalert2__WEBPACK_IMPORTED_MODULE_9___default.a.fire({
+          toast: true,
+          position: 'top',
+          icon: 'error',
+          title: `Removed ${moment__WEBPACK_IMPORTED_MODULE_3___default()(date.dateWithTime).format('YYYY-MM-DD HH:mm:A')} slot to cart.`,
+          showClass: {
+            popup: 'animate__animated animate__fadeInDown' // icon: '',
+
+          },
+          hideClass: {
+            popup: 'animate__animated animate__fadeOutUp'
+          },
+          timer: 2000,
+          timerProgressBar: true,
+          showConfirmButton: false,
+          width: 'auto',
+          padding: '14px'
+        });
+        this.setState({
+          timeSchedule: dateWithTime,
+          bookedSchedule: groupByDate,
+          locallyAddedSlots: localSlots
+        });
+      }
     };
 
     this.removeBookingSchedule = (date, studio_id) => {
+      console.log(date, studio_id);
       this.setState({
         isLoading: true
       });
@@ -2660,6 +2746,24 @@ class Studios extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
           data: value
         })).value();
         groupByDate.push(dateGroup);
+      });
+      sweetalert2__WEBPACK_IMPORTED_MODULE_9___default.a.fire({
+        toast: true,
+        position: 'top',
+        icon: 'error',
+        title: `Removed ${moment__WEBPACK_IMPORTED_MODULE_3___default()(date.dateWithTime).format('YYYY-MM-DD HH:mm:A')} slot to cart.`,
+        showClass: {
+          popup: 'animate__animated animate__fadeInDown' // icon: '',
+
+        },
+        hideClass: {
+          popup: 'animate__animated animate__fadeOutUp'
+        },
+        timer: 2000,
+        timerProgressBar: true,
+        showConfirmButton: false,
+        width: 'auto',
+        padding: '14px'
       });
       this.setState({
         timeSchedule: dateWithTime,
@@ -2767,7 +2871,7 @@ class Studios extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 368,
+        lineNumber: 468,
         columnNumber: 13
       }
     }, isLoading && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_CustomLoader__WEBPACK_IMPORTED_MODULE_13__["default"], {
@@ -2775,7 +2879,7 @@ class Studios extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 370,
+        lineNumber: 470,
         columnNumber: 21
       }
     }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -2783,7 +2887,7 @@ class Studios extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 373,
+        lineNumber: 473,
         columnNumber: 17
       }
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -2791,7 +2895,7 @@ class Studios extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 374,
+        lineNumber: 474,
         columnNumber: 21
       }
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -2799,7 +2903,7 @@ class Studios extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 375,
+        lineNumber: 475,
         columnNumber: 25
       }
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -2807,7 +2911,7 @@ class Studios extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 376,
+        lineNumber: 476,
         columnNumber: 29
       }
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -2815,7 +2919,7 @@ class Studios extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 377,
+        lineNumber: 477,
         columnNumber: 33
       }
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -2823,7 +2927,7 @@ class Studios extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 378,
+        lineNumber: 478,
         columnNumber: 37
       }
     }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -2831,7 +2935,7 @@ class Studios extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 379,
+        lineNumber: 479,
         columnNumber: 37
       }
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -2839,7 +2943,7 @@ class Studios extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 380,
+        lineNumber: 480,
         columnNumber: 41
       }
     }, "Step 01"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -2847,7 +2951,7 @@ class Studios extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 381,
+        lineNumber: 481,
         columnNumber: 41
       }
     }, "Date & Start Time")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -2855,7 +2959,7 @@ class Studios extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 385,
+        lineNumber: 485,
         columnNumber: 29
       }
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -2863,7 +2967,7 @@ class Studios extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 386,
+        lineNumber: 486,
         columnNumber: 33
       }
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -2871,7 +2975,7 @@ class Studios extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 387,
+        lineNumber: 487,
         columnNumber: 37
       }
     }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -2879,7 +2983,7 @@ class Studios extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 388,
+        lineNumber: 488,
         columnNumber: 37
       }
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -2887,7 +2991,7 @@ class Studios extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 389,
+        lineNumber: 489,
         columnNumber: 41
       }
     }, "Step 02"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -2895,7 +2999,7 @@ class Studios extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 390,
+        lineNumber: 490,
         columnNumber: 41
       }
     }, "Details")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -2903,7 +3007,7 @@ class Studios extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 394,
+        lineNumber: 494,
         columnNumber: 29
       }
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -2911,7 +3015,7 @@ class Studios extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 395,
+        lineNumber: 495,
         columnNumber: 33
       }
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -2919,7 +3023,7 @@ class Studios extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 396,
+        lineNumber: 496,
         columnNumber: 37
       }
     }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -2927,7 +3031,7 @@ class Studios extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 397,
+        lineNumber: 497,
         columnNumber: 37
       }
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -2935,7 +3039,7 @@ class Studios extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 398,
+        lineNumber: 498,
         columnNumber: 41
       }
     }, "Step 03"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -2943,7 +3047,7 @@ class Studios extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 399,
+        lineNumber: 499,
         columnNumber: 41
       }
     }, "Payment"))))))), !Object(lodash__WEBPACK_IMPORTED_MODULE_5__["isEmpty"])(bookedSchedule) && !isOpenForm && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Cart__WEBPACK_IMPORTED_MODULE_6__["default"], {
@@ -2955,7 +3059,7 @@ class Studios extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 407,
+        lineNumber: 507,
         columnNumber: 21
       }
     }), !isOpenForm && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_CalendarSlot__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -2971,7 +3075,7 @@ class Studios extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 417,
+        lineNumber: 517,
         columnNumber: 21
       }
     }), isOpenForm && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_UserForm__WEBPACK_IMPORTED_MODULE_7__["default"], {
@@ -2979,7 +3083,7 @@ class Studios extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 429,
+        lineNumber: 529,
         columnNumber: 21
       }
     }), !Object(lodash__WEBPACK_IMPORTED_MODULE_5__["isEmpty"])(instaFeed) && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_InstaGallery__WEBPACK_IMPORTED_MODULE_8__["default"], {
@@ -2987,7 +3091,7 @@ class Studios extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 432,
+        lineNumber: 532,
         columnNumber: 21
       }
     }));
