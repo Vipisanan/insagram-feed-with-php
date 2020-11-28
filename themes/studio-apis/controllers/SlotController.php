@@ -23,6 +23,22 @@ class SlotController extends WP_REST_Controller
                 'args' => array(),
             )
         ]);
+        register_rest_route($namespace, '/' . 'slots', [
+            array(
+                'methods' => 'POST',
+                'callback' => array($this, 'reserveSlot'),
+                'permission_callback' => array($this, 'get_items_permissions_check'),
+                'args' => array(),
+            )
+        ]);
+        register_rest_route($namespace, '/' . 'slots', [
+            array(
+                'methods' => 'DELETE',
+                'callback' => array($this, 'reserveSlot'),
+                'permission_callback' => array($this, 'get_items_permissions_check'),
+                'args' => array(),
+            )
+        ]);
     }
     function get_items_permissions_check($request){
         return true;
@@ -39,6 +55,18 @@ class SlotController extends WP_REST_Controller
 
         $service = new SlotService();
         $res = $service->getAllSlotsByStudio($id);
+        return $res;
+    }
+
+    function reserveSlot(WP_REST_Request $request){
+        $service = new SlotService();
+        $res = $service->reserveSlot($request);
+        return $res;
+    }
+
+    function removeReservedSlot(WP_REST_Request $request){
+        $service = new SlotService();
+        $res = $service->removeReservedSlot($request);
         return $res;
     }
 }

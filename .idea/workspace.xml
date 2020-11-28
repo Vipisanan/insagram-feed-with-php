@@ -20,66 +20,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="723e5bf0-580b-49cc-b5a7-d321feeb1216" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/themes/react_theme/asset-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/themes/react_theme/asset-manifest.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/themes/react_theme/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/react_theme/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/react_theme/react-src/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/themes/react_theme/react-src/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/themes/react_theme/react-src/src/pages/Studios.js" beforeDir="false" afterPath="$PROJECT_DIR$/themes/react_theme/react-src/src/pages/Studios.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/react_theme/react-src/src/pages/style/calendar.css" beforeDir="false" afterPath="$PROJECT_DIR$/themes/react_theme/react-src/src/pages/style/calendar.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/react_theme/static/css/main.chunk.css" beforeDir="false" afterPath="$PROJECT_DIR$/themes/react_theme/static/css/main.chunk.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/react_theme/static/css/main.chunk.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/themes/react_theme/static/css/main.chunk.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/react_theme/static/js/0.chunk.js" beforeDir="false" afterPath="$PROJECT_DIR$/themes/react_theme/static/js/0.chunk.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/react_theme/static/js/0.chunk.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/themes/react_theme/static/js/0.chunk.js.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/themes/react_theme/static/js/main.chunk.js" beforeDir="false" afterPath="$PROJECT_DIR$/themes/react_theme/static/js/main.chunk.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/themes/react_theme/static/js/main.chunk.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/themes/react_theme/static/js/main.chunk.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/twentysixteen/404.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/twentysixteen/archive.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/twentysixteen/comments.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/twentysixteen/css/blocks.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/twentysixteen/css/editor-blocks.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/twentysixteen/css/editor-style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/twentysixteen/css/ie.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/twentysixteen/css/ie7.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/twentysixteen/css/ie8.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/twentysixteen/footer.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/twentysixteen/functions.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/twentysixteen/genericons/COPYING.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/twentysixteen/genericons/Genericons.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/twentysixteen/genericons/Genericons.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/twentysixteen/genericons/Genericons.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/twentysixteen/genericons/Genericons.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/twentysixteen/genericons/LICENSE.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/twentysixteen/genericons/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/twentysixteen/genericons/genericons.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/twentysixteen/header.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/twentysixteen/image.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/twentysixteen/inc/back-compat.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/twentysixteen/inc/customizer.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/twentysixteen/inc/template-tags.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/twentysixteen/index.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/twentysixteen/js/color-scheme-control.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/twentysixteen/js/customize-preview.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/twentysixteen/js/functions.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/twentysixteen/js/html5.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/twentysixteen/js/keyboard-image-navigation.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/twentysixteen/js/skip-link-focus-fix.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/twentysixteen/page.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/twentysixteen/readme.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/twentysixteen/rtl.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/twentysixteen/screenshot.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/twentysixteen/search.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/twentysixteen/searchform.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/twentysixteen/sidebar-content-bottom.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/twentysixteen/sidebar.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/twentysixteen/single.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/twentysixteen/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/twentysixteen/template-parts/biography.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/twentysixteen/template-parts/content-none.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/twentysixteen/template-parts/content-page.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/twentysixteen/template-parts/content-search.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/twentysixteen/template-parts/content-single.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/twentysixteen/template-parts/content.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/studio-apis/controllers/SlotController.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/studio-apis/controllers/SlotController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/studio-apis/services/SlotService.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/studio-apis/services/SlotService.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/themes/twentytwenty-react/build/index.asset.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/twentytwenty-react/build/index.asset.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/themes/twentytwenty-react/build/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/themes/twentytwenty-react/build/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/themes/twentytwenty-react/build/index.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/themes/twentytwenty-react/build/index.js.map" afterDir="false" />
@@ -186,7 +134,7 @@
       <workItem from="1606275198160" duration="147000" />
       <workItem from="1606542780220" duration="11504000" />
       <workItem from="1606569015453" duration="97000" />
-      <workItem from="1606569626839" duration="8837000" />
+      <workItem from="1606569626839" duration="11887000" />
     </task>
     <servers />
   </component>

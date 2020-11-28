@@ -36,4 +36,29 @@ class SlotService
 //        return ("INSERT INTO `std_booking_slot`(`studio_id` , `booking_id` , `type` ,`slot`,`created_at`) VALUE ($studio_id,$booking_id,'full','$slot','$created_at')");
     }
 
+    public function reserveSlot($request){
+        global $wpdb;
+        $params     = $request->get_params();
+        $studio_id  = $params['studio_id'];
+        $slot       = $params['slot'];
+        $created_at = date("Y-m-d H:i:s");
+//        have to validate by max reservation here in future
+        $wpdb->get_results("
+            INSERT INTO `std_booking_slot`(`studio_id`, `type`,`slot`, `created_at`)
+            VALUES ('$studio_id' , 'booking' ,'$slot' , '$created_at');
+        ");
+        return 'slot locked';
+    }
+
+    public function removeReservedSlot($request){
+        global $wpdb;
+        $params     = $request->get_params();
+        $studio_id  = $params['studio_id'];
+        $slot       = $params['slot'];
+        $wpdb->get_results("
+            DELETE FROM `std_booking_slot` WHERE `slot` = $slot AND `type` = 'booking' AND `studio_id` ='$studio_id';
+        ");
+        return 'locked slot remove';
+    }
+
 }

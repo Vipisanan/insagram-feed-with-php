@@ -2472,7 +2472,6 @@ class Studios extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
         studio,
         locallyAddedSlots
       } = this.state;
-      console.log(locallyAddedSlots);
       let dateWithTime = [];
 
       for (let i = 0; i < 12; i++) {
@@ -2499,7 +2498,6 @@ class Studios extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       locallyAddedSlots.forEach(localSlots => {
         slots.push(localSlots);
       });
-      console.log(groupByDate, availableSlots, slots, dateWithTime);
       this.setState(state => {
         return {
           timeSchedule: dateWithTime,
@@ -2871,7 +2869,7 @@ class Studios extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 468,
+        lineNumber: 466,
         columnNumber: 13
       }
     }, isLoading && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_CustomLoader__WEBPACK_IMPORTED_MODULE_13__["default"], {
@@ -2879,7 +2877,7 @@ class Studios extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 470,
+        lineNumber: 468,
         columnNumber: 21
       }
     }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -2887,7 +2885,7 @@ class Studios extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 473,
+        lineNumber: 471,
         columnNumber: 17
       }
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -2895,7 +2893,7 @@ class Studios extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 474,
+        lineNumber: 472,
         columnNumber: 21
       }
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -2903,7 +2901,7 @@ class Studios extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 475,
+        lineNumber: 473,
         columnNumber: 25
       }
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -2911,7 +2909,7 @@ class Studios extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 476,
+        lineNumber: 474,
         columnNumber: 29
       }
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -2919,7 +2917,7 @@ class Studios extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 477,
+        lineNumber: 475,
         columnNumber: 33
       }
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -2927,7 +2925,7 @@ class Studios extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 478,
+        lineNumber: 476,
         columnNumber: 37
       }
     }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -2935,7 +2933,7 @@ class Studios extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 479,
+        lineNumber: 477,
         columnNumber: 37
       }
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -2943,7 +2941,7 @@ class Studios extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 480,
+        lineNumber: 478,
         columnNumber: 41
       }
     }, "Step 01"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -2951,7 +2949,7 @@ class Studios extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 481,
+        lineNumber: 479,
         columnNumber: 41
       }
     }, "Date & Start Time")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -2959,7 +2957,7 @@ class Studios extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 485,
+        lineNumber: 483,
         columnNumber: 29
       }
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -2967,7 +2965,7 @@ class Studios extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 486,
+        lineNumber: 484,
         columnNumber: 33
       }
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -2975,7 +2973,7 @@ class Studios extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 487,
+        lineNumber: 485,
         columnNumber: 37
       }
     }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -2983,7 +2981,7 @@ class Studios extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 488,
+        lineNumber: 486,
         columnNumber: 37
       }
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -2991,7 +2989,7 @@ class Studios extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 489,
+        lineNumber: 487,
         columnNumber: 41
       }
     }, "Step 02"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -2999,7 +2997,7 @@ class Studios extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 490,
+        lineNumber: 488,
         columnNumber: 41
       }
     }, "Details")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -3007,7 +3005,7 @@ class Studios extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 494,
+        lineNumber: 492,
         columnNumber: 29
       }
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -3015,7 +3013,7 @@ class Studios extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 495,
+        lineNumber: 493,
         columnNumber: 33
       }
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -3023,7 +3021,7 @@ class Studios extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 496,
+        lineNumber: 494,
         columnNumber: 37
       }
     }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -3031,7 +3029,7 @@ class Studios extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 497,
+        lineNumber: 495,
         columnNumber: 37
       }
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -3039,7 +3037,7 @@ class Studios extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 498,
+        lineNumber: 496,
         columnNumber: 41
       }
     }, "Step 03"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -3047,7 +3045,7 @@ class Studios extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 499,
+        lineNumber: 497,
         columnNumber: 41
       }
     }, "Payment"))))))), !Object(lodash__WEBPACK_IMPORTED_MODULE_5__["isEmpty"])(bookedSchedule) && !isOpenForm && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Cart__WEBPACK_IMPORTED_MODULE_6__["default"], {
@@ -3059,7 +3057,7 @@ class Studios extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 507,
+        lineNumber: 505,
         columnNumber: 21
       }
     }), !isOpenForm && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_CalendarSlot__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -3075,7 +3073,7 @@ class Studios extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 517,
+        lineNumber: 515,
         columnNumber: 21
       }
     }), isOpenForm && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_UserForm__WEBPACK_IMPORTED_MODULE_7__["default"], {
@@ -3083,7 +3081,7 @@ class Studios extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 529,
+        lineNumber: 527,
         columnNumber: 21
       }
     }), !Object(lodash__WEBPACK_IMPORTED_MODULE_5__["isEmpty"])(instaFeed) && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_InstaGallery__WEBPACK_IMPORTED_MODULE_8__["default"], {
@@ -3091,7 +3089,7 @@ class Studios extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 532,
+        lineNumber: 530,
         columnNumber: 21
       }
     }));
@@ -3590,5 +3588,5 @@ module.exports = __webpack_require__(/*! /opt/lampp/htdocs/wordpress/wp-content/
 
 /***/ })
 
-},[[0,"runtime-main",1]]]);
+},[[0,"runtime-main",0]]]);
 //# sourceMappingURL=main.chunk.js.map

@@ -130,7 +130,6 @@ class Studios extends Component {
 
     dataWithTime = async () => {
         const {header, studio, locallyAddedSlots} = this.state;
-        console.log(locallyAddedSlots);
         let dateWithTime = [];
         for (let i = 0; i < 12; i++) {
             const row = header.map((item, index) => ({
@@ -155,7 +154,6 @@ class Studios extends Component {
         locallyAddedSlots.forEach(localSlots => {
             slots.push(localSlots);
         })
-        console.log(groupByDate ,availableSlots,slots ,dateWithTime);
 
         this.setState(state => {
             return {
