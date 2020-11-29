@@ -21,21 +21,13 @@
   <component name="ChangeListManager">
     <list default="true" id="723e5bf0-580b-49cc-b5a7-d321feeb1216" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/react_theme/asset-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/themes/react_theme/asset-manifest.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/themes/react_theme/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/react_theme/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/themes/react_theme/react-src/src/pages/Studios.js" beforeDir="false" afterPath="$PROJECT_DIR$/themes/react_theme/react-src/src/pages/Studios.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/react_theme/react-src/src/services/ScheduleService.js" beforeDir="false" afterPath="$PROJECT_DIR$/themes/react_theme/react-src/src/services/ScheduleService.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/themes/react_theme/static/js/main.chunk.js" beforeDir="false" afterPath="$PROJECT_DIR$/themes/react_theme/static/js/main.chunk.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/themes/react_theme/static/js/main.chunk.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/themes/react_theme/static/js/main.chunk.js.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/themes/studio-apis/controllers/SlotController.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/studio-apis/controllers/SlotController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/themes/studio-apis/services/SlotService.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/studio-apis/services/SlotService.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/twentytwenty-react/build/index.asset.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/twentytwenty-react/build/index.asset.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/twentytwenty-react/build/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/themes/twentytwenty-react/build/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/twentytwenty-react/build/index.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/themes/twentytwenty-react/build/index.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/twentytwenty-react/functions.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/twentytwenty-react/functions.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/twentytwenty-react/page-react.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/twentytwenty-react/page-react.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/twentytwenty-react/src/components/posts/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/themes/twentytwenty-react/src/components/posts/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/twentytwenty-react/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/themes/twentytwenty-react/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/twentytwenty-react/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/themes/twentytwenty-react/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -134,7 +126,8 @@
       <workItem from="1606275198160" duration="147000" />
       <workItem from="1606542780220" duration="11504000" />
       <workItem from="1606569015453" duration="97000" />
-      <workItem from="1606569626839" duration="11887000" />
+      <workItem from="1606569626839" duration="20721000" />
+      <workItem from="1606620798809" duration="5569000" />
     </task>
     <servers />
   </component>
@@ -169,10 +162,10 @@
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="726" y="301" width="524" height="502" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1605374932482" />
-    <state x="167" y="125" width="1653" height="855" key="DiffContextDialog" timestamp="1606570047885">
+    <state x="167" y="125" width="1653" height="855" key="DiffContextDialog" timestamp="1606588074467">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="167" y="125" width="1653" height="855" key="DiffContextDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1606570047885" />
+    <state x="167" y="125" width="1653" height="855" key="DiffContextDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1606588074467" />
     <state x="629" y="330" width="719" height="445" key="EditFileWatcherDialog" timestamp="1605374409713">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
@@ -205,10 +198,10 @@
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="482" y="187" key="SettingsEditor/67.27.1853.1053@67.27.1853.1053" timestamp="1605373603870" />
-    <state width="498" height="446" key="SwitcherDM" timestamp="1606547237739">
+    <state width="498" height="446" key="SwitcherDM" timestamp="1606585704101">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="498" height="446" key="SwitcherDM/67.27.1853.1053@67.27.1853.1053" timestamp="1606547237739" />
+    <state width="498" height="446" key="SwitcherDM/67.27.1853.1053@67.27.1853.1053" timestamp="1606585704101" />
     <state x="657" y="253" width="672" height="677" key="run.anything.popup" timestamp="1605239255409">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>

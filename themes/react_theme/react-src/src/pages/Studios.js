@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import './style/component.css'
 import CalendarSlot from "../components/CalendarSlot";
 import moment from 'moment';
-import {bookingSchedule, getAllDiscounts, getAllSchedule, userRegister} from '../services/ScheduleService';
+import {bookingSchedule, getAllDiscounts, getAllSchedule, userRegister ,reserveSlot, removeReservedSlot} from '../services/ScheduleService';
 import {chain, isEmpty, isEqual , value} from 'lodash';
 import Cart from "../components/Cart";
 import UserForm from "../components/UserForm";
@@ -74,10 +74,10 @@ class Studios extends Component {
             studios: [],
             studio: {
                 "id": "1",
-                "name": "willow",
+                "name": "Willow",
                 "status": "active",
                 "type": "studio",
-                "max_reservation": "1",
+                "max_reservation": 4,
                 "tax": "13",
                 "price": "95",
                 "created_at": "2020-11-11 06:00:00"
@@ -109,7 +109,6 @@ class Studios extends Component {
     renderDiscount = (length, studio_id) => {
         const {allDiscounts} = this.state;
         const dis = allDiscounts.filter(item => (item.studio_id === studio_id && item.no_of_slot === length.toString()));
-        console.log(length.toString(), studio_id, dis)
         if (isEmpty(dis[0])) return 1; else return dis[0].discount;
     }
 
@@ -147,18 +146,22 @@ class Studios extends Component {
             data:value,
             date:key
         })).value();
-        let  availableSlots =[]
-        groupByDate.forEach((byDate)=>{
-            availableSlots = slots.filter(slot=>(byDate.date === slot.slot && byDate.data.length <= studio.max_reservation));
+        let  filteredBusySlots =[]
+        console.log(groupByDate,slots ,studio);
+        groupByDate.forEach(byDate =>{
+            const bookedSlot = slots.filter(slot=>isEqual(byDate.date, slot.slot) && (byDate.data.length >= studio.max_reservation))
+            filteredBusySlots.push(bookedSlot[0]);
         })
-        locallyAddedSlots.forEach(localSlots => {
-            slots.push(localSlots);
-        })
+        console.log(filteredBusySlots);
 
+        locallyAddedSlots.forEach(localSlots => {
+            filteredBusySlots.push(localSlots);
+        })
+        console.log(filteredBusySlots);
         this.setState(state => {
             return {
                 timeSchedule: dateWithTime,
-                busySlots: availableSlots
+                busySlots: filteredBusySlots.filter(item=>!isEmpty(item))
             }
         }, () => this.bookedSlotTimeMapping());
     }
@@ -166,7 +169,6 @@ class Studios extends Component {
     bookedSlotTimeMapping = async () => {
         let {timeSchedule, busySlots, locallyAddedSlots, studio} = this.state;
         let newColSchedule = [];
-        let noOfSlot = 0;
         if (locallyAddedSlots.length > 0) {
             locallyAddedSlots.forEach(localSlots => {
                 busySlots.forEach(slot => {
@@ -206,153 +208,174 @@ class Studios extends Component {
         });
     }
 
+    checkReservationSlot = async data => {
+        const {studio} = this.state;
+        const obj = {
+            studio_id:studio.id,
+            slot:data.dateWithTime
+        }
+        if (data.status === 'available'){
+            try{
+                await reserveSlot(obj);
+            }catch (e){
+                data.status = 'available';
+                // this.addSchedule(data);
+            }
+
+        }
+        if (data.status === "booking"){
+            try{
+                await removeReservedSlot(obj)
+            }catch (e){
+                data.status = 'booking';
+                // this.addSchedule(data);
+            }
+        }
+
+    }
 
     addSchedule = date => {
         console.log(date);
-        //have to add as lock slot here
-        //call quary
+        this.checkReservationSlot(date);
         if (date.status === 'available'){
-            this.setState({isLoading: true})
-            const {timeSchedule, studio, studios, locallyAddedSlots} = this.state;
-            let dateWithTime = [];
-            let localSlots = [];
-            //add to local which slot booked.
-            localSlots = locallyAddedSlots;
-            localSlots.push({studio_id: studio.id, slot: date.dateWithTime});
-            //reserved slot from calendar
-            for (let i = 0; i < 12; i++) {
-                const row = timeSchedule[i].map((item, index) => ({
+                const {timeSchedule, studio, studios, locallyAddedSlots} = this.state;
+                let dateWithTime = [];
+                let localSlots = [];
+                localSlots = locallyAddedSlots;
+                localSlots.push({studio_id: studio.id, slot: date.dateWithTime});
+                //reserved slot from calendar
+                for (let i = 0; i < 12; i++) {
+                    const row = timeSchedule[i].map((item, index) => ({
+                        ...item,
+                        dateWithTime: item.dateWithTime,
+                        status: (item.status === 'available') ? ((item.dateWithTime === date.dateWithTime) ? 'booking' : item.status) : item.status
+                    }));
+                    dateWithTime.push(row);
+                }
+                const lData = localSlots.map((item, index) => ({
                     ...item,
-                    dateWithTime: item.dateWithTime,
-                    status: (item.status === 'available') ? ((item.dateWithTime === date.dateWithTime) ? 'booking' : item.status) : item.status
+                    date: moment(item.slot).format('YYYY-MM-DD'),
+                    studio: studios.filter(std => std.id === item.studio_id),
                 }));
-                dateWithTime.push(row);
-            }
-            const lData = localSlots.map((item, index) => ({
-                ...item,
-                date: moment(item.slot).format('YYYY-MM-DD'),
-                studio: studios.filter(std => std.id === item.studio_id),
-            }));
-            //first group by studio
-            const groupByStudios = chain(lData).groupBy('studio_id').map((value, key) => ({
-                studio_id: key,
-                data: value
-            })).value();
-            //second group by date
-            let groupByDate = [];
-            groupByStudios.forEach((stuGroup) => {
-                const dateGroup = chain(stuGroup.data).groupBy('date').map((value, key) => ({
-                    date: key,
+                //first group by studio
+                const groupByStudios = chain(lData).groupBy('studio_id').map((value, key) => ({
+                    studio_id: key,
                     data: value
                 })).value();
-                groupByDate.push(dateGroup);
-            })
+                //second group by date
+                let groupByDate = [];
+                groupByStudios.forEach((stuGroup) => {
+                    const dateGroup = chain(stuGroup.data).groupBy('date').map((value, key) => ({
+                        date: key,
+                        data: value
+                    })).value();
+                    groupByDate.push(dateGroup);
+                })
 
-            Swal.fire({
-                toast: true,
-                position: 'top',
-                icon: 'success',
-                title: `Added ${moment(date.dateWithTime).format('YYYY-MM-DD HH:mm:A')} slot to cart.`,
-                showClass: {
-                    popup: 'animate__animated animate__fadeInDown',
-                    // icon: '',
-                },
-                hideClass: {
-                    popup: 'animate__animated animate__fadeOutUp',
-                },
-                timer: 2000,
-                timerProgressBar: true,
-                showConfirmButton: false,
-                width: 'auto',
-                padding: '14px',
+                Swal.fire({
+                    toast: true,
+                    position: 'top',
+                    icon: 'success',
+                    title: `Added ${moment(date.dateWithTime).format('YYYY-MM-DD HH:mm:A')} slot to cart.`,
+                    showClass: {
+                        popup: 'animate__animated animate__fadeInDown',
+                        // icon: '',
+                    },
+                    hideClass: {
+                        popup: 'animate__animated animate__fadeOutUp',
+                    },
+                    timer: 2000,
+                    timerProgressBar: true,
+                    showConfirmButton: false,
+                    width: 'auto',
+                    padding: '14px',
 
-            });
+                });
 
-            this.setState({
-                timeSchedule: dateWithTime,
-                bookedSchedule: groupByDate,
-                locallyAddedSlots: localSlots,
-                isLoading: false
-            })
+                this.setState({
+                    timeSchedule: dateWithTime,
+                    bookedSchedule: groupByDate,
+                    locallyAddedSlots: localSlots,
+                    isLoading: false
+                })
+
         }
         if (date.status === "booking"){
             const {timeSchedule, locallyAddedSlots, studios, studio} = this.state;
             let dateWithTime = [];
             let localSlots = [];
             //removed to local which slot booked.
-            console.log(locallyAddedSlots);
-            localSlots = locallyAddedSlots.filter(slot => !isEqual(slot, {studio_id: date.studio_id, slot: date.dateWithTime}));
-            console.log(localSlots);
 
-            for (let i = 0; i < 12; i++) {
-                const row = timeSchedule[i].map((item, index) => ({
+
+                localSlots = locallyAddedSlots.filter(slot => !isEqual(slot, {studio_id: date.studio_id, slot: date.dateWithTime}));
+
+                for (let i = 0; i < 12; i++) {
+                    const row = timeSchedule[i].map((item, index) => ({
+                        ...item,
+                        dateWithTime: item.dateWithTime,
+                        status: (item.status === 'booking') ? ((item.dateWithTime === date.dateWithTime) ? 'available' : item.status) : item.status
+                    }));
+                    dateWithTime.push(row);
+                }
+
+                //remove from local
+
+                const lData = localSlots.map((item) => ({
                     ...item,
-                    dateWithTime: item.dateWithTime,
-                    status: (item.status === 'booking') ? ((item.dateWithTime === date.dateWithTime) ? 'available' : item.status) : item.status
+                    date: moment(item.slot).format('YYYY-MM-DD'),
+                    studio: studios.filter(std => std.id === item.studio_id),
                 }));
-                dateWithTime.push(row);
-            }
-
-            //remove from local
-
-            const lData = localSlots.map((item) => ({
-                ...item,
-                date: moment(item.slot).format('YYYY-MM-DD'),
-                studio: studios.filter(std => std.id === item.studio_id),
-            }));
-            //first group by studio
-            const groupByStudios = chain(lData).groupBy('studio_id').map((value, key) => ({
-                studio_id: key,
-                data: value
-            })).value();
-            //second group by date
-            let groupByDate = [];
-            groupByStudios.forEach((stuGroup) => {
-                const dateGroup = chain(stuGroup.data).groupBy('date').map((value, key) => ({
-                    date: key,
+                //first group by studio
+                const groupByStudios = chain(lData).groupBy('studio_id').map((value, key) => ({
+                    studio_id: key,
                     data: value
                 })).value();
-                groupByDate.push(dateGroup);
-            });
-            Swal.fire({
-                toast: true,
-                position: 'top',
-                icon: 'error',
-                title: `Removed ${moment(date.dateWithTime).format('YYYY-MM-DD HH:mm:A')} slot to cart.`,
-                showClass: {
-                    popup: 'animate__animated animate__fadeInDown',
-                    // icon: '',
-                },
-                hideClass: {
-                    popup: 'animate__animated animate__fadeOutUp',
-                },
-                timer: 2000,
-                timerProgressBar: true,
-                showConfirmButton: false,
-                width: 'auto',
-                padding: '14px',
+                //second group by date
+                let groupByDate = [];
+                groupByStudios.forEach((stuGroup) => {
+                    const dateGroup = chain(stuGroup.data).groupBy('date').map((value, key) => ({
+                        date: key,
+                        data: value
+                    })).value();
+                    groupByDate.push(dateGroup);
+                });
+                Swal.fire({
+                    toast: true,
+                    position: 'top',
+                    icon: 'error',
+                    title: `Removed ${moment(date.dateWithTime).format('YYYY-MM-DD HH:mm:A')} slot to cart.`,
+                    showClass: {
+                        popup: 'animate__animated animate__fadeInDown',
+                        // icon: '',
+                    },
+                    hideClass: {
+                        popup: 'animate__animated animate__fadeOutUp',
+                    },
+                    timer: 2000,
+                    timerProgressBar: true,
+                    showConfirmButton: false,
+                    width: 'auto',
+                    padding: '14px',
 
-            });
-            this.setState({
-                timeSchedule: dateWithTime,
-                bookedSchedule: groupByDate,
-                locallyAddedSlots: localSlots,
-            });
+                });
+                this.setState({
+                    timeSchedule: dateWithTime,
+                    bookedSchedule: groupByDate,
+                    locallyAddedSlots: localSlots,
+                });
+
         }
 
     }
 
 
     removeBookingSchedule = (date, studio_id) => {
-        console.log(date, studio_id);
         this.setState({isLoading: true})
         const {timeSchedule, locallyAddedSlots, studios, studio} = this.state;
         let dateWithTime = [];
         let localSlots = [];
         //removed to local which slot booked.
-        console.log(locallyAddedSlots);
         localSlots = locallyAddedSlots.filter(slot => !isEqual(slot, {studio_id: studio_id, slot: date}));
-        console.log(localSlots);
 
         for (let i = 0; i < 12; i++) {
             const row = timeSchedule[i].map((item, index) => ({

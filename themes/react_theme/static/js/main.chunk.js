@@ -2440,7 +2440,6 @@ class Studios extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
         allDiscounts
       } = this.state;
       const dis = allDiscounts.filter(item => item.studio_id === studio_id && item.no_of_slot === length.toString());
-      console.log(length.toString(), studio_id, dis);
       if (Object(lodash__WEBPACK_IMPORTED_MODULE_5__["isEmpty"])(dis[0])) return 1;else return dis[0].discount;
     };
 
@@ -2491,17 +2490,21 @@ class Studios extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
         data: value,
         date: key
       })).value();
-      let availableSlots = [];
+      let filteredBusySlots = [];
+      console.log(groupByDate, slots, studio);
       groupByDate.forEach(byDate => {
-        availableSlots = slots.filter(slot => byDate.date === slot.slot && byDate.data.length <= studio.max_reservation);
+        const bookedSlot = slots.filter(slot => Object(lodash__WEBPACK_IMPORTED_MODULE_5__["isEqual"])(byDate.date, slot.slot) && byDate.data.length >= studio.max_reservation);
+        filteredBusySlots.push(bookedSlot[0]);
       });
+      console.log(filteredBusySlots);
       locallyAddedSlots.forEach(localSlots => {
-        slots.push(localSlots);
+        filteredBusySlots.push(localSlots);
       });
+      console.log(filteredBusySlots);
       this.setState(state => {
         return {
           timeSchedule: dateWithTime,
-          busySlots: availableSlots
+          busySlots: filteredBusySlots.filter(item => !Object(lodash__WEBPACK_IMPORTED_MODULE_5__["isEmpty"])(item))
         };
       }, () => this.bookedSlotTimeMapping());
     };
@@ -2514,7 +2517,6 @@ class Studios extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
         studio
       } = this.state;
       let newColSchedule = [];
-      let noOfSlot = 0;
 
       if (locallyAddedSlots.length > 0) {
         locallyAddedSlots.forEach(localSlots => {
@@ -2552,14 +2554,37 @@ class Studios extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       });
     };
 
+    this.checkReservationSlot = async data => {
+      const {
+        studio
+      } = this.state;
+      const obj = {
+        studio_id: studio.id,
+        slot: data.dateWithTime
+      };
+
+      if (data.status === 'available') {
+        try {
+          await Object(_services_ScheduleService__WEBPACK_IMPORTED_MODULE_4__["reserveSlot"])(obj);
+        } catch (e) {
+          data.status = 'available'; // this.addSchedule(data);
+        }
+      }
+
+      if (data.status === "booking") {
+        try {
+          await Object(_services_ScheduleService__WEBPACK_IMPORTED_MODULE_4__["removeReservedSlot"])(obj);
+        } catch (e) {
+          data.status = 'booking'; // this.addSchedule(data);
+        }
+      }
+    };
+
     this.addSchedule = date => {
-      console.log(date); //have to add as lock slot here
-      //call quary
+      console.log(date);
+      this.checkReservationSlot(date);
 
       if (date.status === 'available') {
-        this.setState({
-          isLoading: true
-        });
         const {
           timeSchedule,
           studio,
@@ -2567,8 +2592,7 @@ class Studios extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
           locallyAddedSlots
         } = this.state;
         let dateWithTime = [];
-        let localSlots = []; //add to local which slot booked.
-
+        let localSlots = [];
         localSlots = locallyAddedSlots;
         localSlots.push({
           studio_id: studio.id,
@@ -2637,12 +2661,10 @@ class Studios extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
         let dateWithTime = [];
         let localSlots = []; //removed to local which slot booked.
 
-        console.log(locallyAddedSlots);
         localSlots = locallyAddedSlots.filter(slot => !Object(lodash__WEBPACK_IMPORTED_MODULE_5__["isEqual"])(slot, {
           studio_id: date.studio_id,
           slot: date.dateWithTime
         }));
-        console.log(localSlots);
 
         for (let i = 0; i < 12; i++) {
           const row = timeSchedule[i].map((item, index) => ({ ...item,
@@ -2698,7 +2720,6 @@ class Studios extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
     };
 
     this.removeBookingSchedule = (date, studio_id) => {
-      console.log(date, studio_id);
       this.setState({
         isLoading: true
       });
@@ -2711,12 +2732,10 @@ class Studios extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       let dateWithTime = [];
       let localSlots = []; //removed to local which slot booked.
 
-      console.log(locallyAddedSlots);
       localSlots = locallyAddedSlots.filter(slot => !Object(lodash__WEBPACK_IMPORTED_MODULE_5__["isEqual"])(slot, {
         studio_id: studio_id,
         slot: date
       }));
-      console.log(localSlots);
 
       for (let i = 0; i < 12; i++) {
         const row = timeSchedule[i].map((item, index) => ({ ...item,
@@ -2834,10 +2853,10 @@ class Studios extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       studios: [],
       studio: {
         "id": "1",
-        "name": "willow",
+        "name": "Willow",
         "status": "active",
         "type": "studio",
-        "max_reservation": "1",
+        "max_reservation": 4,
         "tax": "13",
         "price": "95",
         "created_at": "2020-11-11 06:00:00"
@@ -2869,7 +2888,7 @@ class Studios extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 466,
+        lineNumber: 489,
         columnNumber: 13
       }
     }, isLoading && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_CustomLoader__WEBPACK_IMPORTED_MODULE_13__["default"], {
@@ -2877,7 +2896,7 @@ class Studios extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 468,
+        lineNumber: 491,
         columnNumber: 21
       }
     }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -2885,7 +2904,7 @@ class Studios extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 471,
+        lineNumber: 494,
         columnNumber: 17
       }
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -2893,7 +2912,7 @@ class Studios extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 472,
+        lineNumber: 495,
         columnNumber: 21
       }
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -2901,7 +2920,7 @@ class Studios extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 473,
+        lineNumber: 496,
         columnNumber: 25
       }
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -2909,7 +2928,7 @@ class Studios extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 474,
+        lineNumber: 497,
         columnNumber: 29
       }
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -2917,7 +2936,7 @@ class Studios extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 475,
+        lineNumber: 498,
         columnNumber: 33
       }
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -2925,7 +2944,7 @@ class Studios extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 476,
+        lineNumber: 499,
         columnNumber: 37
       }
     }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -2933,7 +2952,7 @@ class Studios extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 477,
+        lineNumber: 500,
         columnNumber: 37
       }
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -2941,7 +2960,7 @@ class Studios extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 478,
+        lineNumber: 501,
         columnNumber: 41
       }
     }, "Step 01"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -2949,7 +2968,7 @@ class Studios extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 479,
+        lineNumber: 502,
         columnNumber: 41
       }
     }, "Date & Start Time")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -2957,7 +2976,7 @@ class Studios extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 483,
+        lineNumber: 506,
         columnNumber: 29
       }
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -2965,7 +2984,7 @@ class Studios extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 484,
+        lineNumber: 507,
         columnNumber: 33
       }
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -2973,7 +2992,7 @@ class Studios extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 485,
+        lineNumber: 508,
         columnNumber: 37
       }
     }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -2981,7 +3000,7 @@ class Studios extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 486,
+        lineNumber: 509,
         columnNumber: 37
       }
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -2989,7 +3008,7 @@ class Studios extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 487,
+        lineNumber: 510,
         columnNumber: 41
       }
     }, "Step 02"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -2997,7 +3016,7 @@ class Studios extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 488,
+        lineNumber: 511,
         columnNumber: 41
       }
     }, "Details")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -3005,7 +3024,7 @@ class Studios extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 492,
+        lineNumber: 515,
         columnNumber: 29
       }
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -3013,7 +3032,7 @@ class Studios extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 493,
+        lineNumber: 516,
         columnNumber: 33
       }
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -3021,7 +3040,7 @@ class Studios extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 494,
+        lineNumber: 517,
         columnNumber: 37
       }
     }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -3029,7 +3048,7 @@ class Studios extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 495,
+        lineNumber: 518,
         columnNumber: 37
       }
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -3037,7 +3056,7 @@ class Studios extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 496,
+        lineNumber: 519,
         columnNumber: 41
       }
     }, "Step 03"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -3045,7 +3064,7 @@ class Studios extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 497,
+        lineNumber: 520,
         columnNumber: 41
       }
     }, "Payment"))))))), !Object(lodash__WEBPACK_IMPORTED_MODULE_5__["isEmpty"])(bookedSchedule) && !isOpenForm && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Cart__WEBPACK_IMPORTED_MODULE_6__["default"], {
@@ -3057,7 +3076,7 @@ class Studios extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 505,
+        lineNumber: 528,
         columnNumber: 21
       }
     }), !isOpenForm && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_CalendarSlot__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -3073,7 +3092,7 @@ class Studios extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 515,
+        lineNumber: 538,
         columnNumber: 21
       }
     }), isOpenForm && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_UserForm__WEBPACK_IMPORTED_MODULE_7__["default"], {
@@ -3081,7 +3100,7 @@ class Studios extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 527,
+        lineNumber: 550,
         columnNumber: 21
       }
     }), !Object(lodash__WEBPACK_IMPORTED_MODULE_5__["isEmpty"])(instaFeed) && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_InstaGallery__WEBPACK_IMPORTED_MODULE_8__["default"], {
@@ -3089,7 +3108,7 @@ class Studios extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 530,
+        lineNumber: 553,
         columnNumber: 21
       }
     }));
@@ -3497,7 +3516,7 @@ const getAllStudios = async () => {
 /*!*****************************************!*\
   !*** ./src/services/ScheduleService.js ***!
   \*****************************************/
-/*! exports provided: getAllSchedule, userRegister, bookingSchedule, getAllDiscounts */
+/*! exports provided: getAllSchedule, userRegister, bookingSchedule, getAllDiscounts, reserveSlot, removeReservedSlot */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3506,6 +3525,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "userRegister", function() { return userRegister; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "bookingSchedule", function() { return bookingSchedule; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getAllDiscounts", function() { return getAllDiscounts; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "reserveSlot", function() { return reserveSlot; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "removeReservedSlot", function() { return removeReservedSlot; });
 /* harmony import */ var _utils_api__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../utils/api */ "./src/utils/api.js");
 
 const getAllSchedule = async id => {
@@ -3524,6 +3545,26 @@ const bookingSchedule = async data => {
 const getAllDiscounts = async () => {
   let schedule = await _utils_api__WEBPACK_IMPORTED_MODULE_0__["default"].get('http://localhost/wordpress/index.php/wp-json/std/discount');
   return schedule.data;
+}; //slot reserve
+
+const reserveSlot = async data => {
+  try {
+    let schedule = await _utils_api__WEBPACK_IMPORTED_MODULE_0__["default"].post('http://localhost/wordpress/index.php/wp-json/std/slots', data);
+    return schedule.data;
+  } catch (e) {
+    throw e;
+  }
+}; //remove reserve
+
+const removeReservedSlot = async data => {
+  try {
+    let schedule = await _utils_api__WEBPACK_IMPORTED_MODULE_0__["default"].delete('http://localhost/wordpress/index.php/wp-json/std/slots', {
+      data: data
+    });
+    return schedule.data;
+  } catch (e) {
+    throw e;
+  }
 }; // import axios from 'axios';
 //
 // export function getSchedule() {

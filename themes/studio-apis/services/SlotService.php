@@ -50,15 +50,14 @@ class SlotService
         return 'slot locked';
     }
 
-    public function removeReservedSlot($request){
+    public function removeReservedSlot($studio_id ,$slot){
         global $wpdb;
-        $params     = $request->get_params();
-        $studio_id  = $params['studio_id'];
-        $slot       = $params['slot'];
+        $date = new DateTime($slot);
+        $result = $date->format('Y-m-d H:i:s');
         $wpdb->get_results("
-            DELETE FROM `std_booking_slot` WHERE `slot` = $slot AND `type` = 'booking' AND `studio_id` ='$studio_id';
+            DELETE FROM `std_booking_slot` WHERE `slot` = '$result' AND `type` = 'booking' AND `studio_id` = $studio_id;
         ");
-        return 'locked slot remove';
+        return  "DELETE FROM `std_booking_slot` WHERE `slot` = '$result' AND `type` = 'booking' AND `studio_id` = $studio_id;" ;
     }
 
 }

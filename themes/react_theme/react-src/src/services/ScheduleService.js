@@ -22,6 +22,25 @@ export const getAllDiscounts = async () => {
     return schedule.data;
 };
 
+//slot reserve
+export const reserveSlot = async (data) => {
+    try {
+        let schedule = await API.post('http://localhost/wordpress/index.php/wp-json/std/slots' , data);
+        return schedule.data;
+    }catch (e) {
+        throw e;
+    }
+
+};
+//remove reserve
+export const removeReservedSlot = async (data) => {
+    try{
+        let schedule = await API.delete('http://localhost/wordpress/index.php/wp-json/std/slots' , {data:data});
+        return schedule.data;
+    }catch (e) {
+        throw e;
+    }
+};
 
 // import axios from 'axios';
 //

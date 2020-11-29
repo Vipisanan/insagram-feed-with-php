@@ -34,7 +34,7 @@ class SlotController extends WP_REST_Controller
         register_rest_route($namespace, '/' . 'slots', [
             array(
                 'methods' => 'DELETE',
-                'callback' => array($this, 'reserveSlot'),
+                'callback' => array($this, 'removeReservedSlot'),
                 'permission_callback' => array($this, 'get_items_permissions_check'),
                 'args' => array(),
             )
@@ -65,8 +65,11 @@ class SlotController extends WP_REST_Controller
     }
 
     function removeReservedSlot(WP_REST_Request $request){
+        $params     = $request->get_params();
+        $studio_id  = (int)$params['studio_id'];
+        $slot       = $params['slot'];
         $service = new SlotService();
-        $res = $service->removeReservedSlot($request);
+        $res = $service->removeReservedSlot($studio_id , $slot);
         return $res;
     }
 }
